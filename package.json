@@ -1,0 +1,19 @@
+{
+  "name": "ipso-ble-char",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hedywings/ipso-ble-char.git"
+  },
+  "author": "Hedy Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hedywings/ipso-ble-char/issues"
+  },
+  "homepage": "https://github.com/hedywings/ipso-ble-char#readme"
+}

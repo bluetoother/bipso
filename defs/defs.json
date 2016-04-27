@@ -1,0 +1,254 @@
+{
+    "oid": {
+        "dIn": 3200,
+        "dOut": 3201,
+        "aIn": 3202,
+        "aOut": 3203,
+        "generic": 3300,
+        "illuminance": 3301,
+        "presence": 3302,
+        "temperature": 3303,
+        "humidity": 3304,
+        "pwrMea": 3305,
+        "actuation": 3306,
+        "setPoint": 3308,
+        "loadCtrl": 3310,
+        "lightCtrl": 3311,
+        "pwrCtrl": 3312,
+        "accelerometer": 3313,
+        "magnetometer": 3314,
+        "barometer": 3315
+    },
+    "ipsoCharUuid": {
+        "dIn": "0xcc00",
+        "dOut": "0xcc01",
+        "aIn": "0xcc02",
+        "aOut": "0xcc03",
+        "generic": "0xcc04",
+        "illuminance": "0xcc05",
+        "presence": "0xcc06",
+        "temperature": "0xcc07",
+        "humidity": "0xcc08",
+        "pwrMea": "0xcc09",
+        "actuation": "0xcc0a",
+        "setPoint": "0xcc0b",
+        "loadCtrl": "0xcc0c",
+        "lightCtrl": "0xcc0d",
+        "pwrCtrl": "0xcc0e",
+        "accelerometer": "0xcc0f",
+        "magnetometer": "0xcc10",
+        "barometer": "0xcc11"
+    },
+    "0xcc00": {  
+        "params": [
+            {"flags": "uint8"},
+            {"dInState": "bool"}, 
+            {"counter": "uint8"},
+            {"dInPolarity": "bool"},
+            {"debouncePeriod": "uint16"},
+            {"edgeSelection": "uint8"},
+            {"counterReset": "buffer"},
+            {"appType": "string"},
+            {"sensorType": "string"}
+        ]
+    },
+    "0xcc01": { 
+        "params": [
+            {"flags": "uint8"},
+            {"dOutState": "bool"}, 
+            {"dOutPolarity": "bool"},
+            {"appType": "string"}
+        ]
+    },
+    "0xcc02": {  
+        "params": [
+            {"flags": "uint8"},
+            {"aInCurrValue": "float"}, 
+            {"minMeaValue": "float"},
+            {"maxMeaValue": "float"},
+            {"minRangeValue": "float"},
+            {"maxRangeValue": "float"},
+            {"resetMinMaxMeaValues": "buffer"},
+            {"appType": "string"},
+            {"sensorType": "string"}
+        ]
+    },
+    "0xcc03": {  
+        "params": [
+            {"flags": "uint8"},
+            {"aOutCurrValue": "float"},  
+            {"minRangeValue": "float"},
+            {"maxRangeValue": "float"},
+            {"appType": "string"}
+        ]
+    },    
+    "0xcc04": {
+        "params": [
+            {"flags": "uint8"},
+            {"sensorValue": "float"}, 
+            {"units": "string"},
+            {"minMeaValue": "float"},
+            {"maxMeaValue": "float"},
+            {"minRangeValue": "float"},
+            {"maxRangeValue": "float"},
+            {"resetMinMaxMeaValues": "buffer"},
+            {"appType": "string"},
+            {"sensorType": "string"}
+        ]
+    },
+    "0xcc05": {
+        "params": [
+            {"flags": "uint8"},
+            {"sensorValue": "float"}, 
+            {"units": "string"},
+            {"minMeaValue": "float"},
+            {"maxMeaValue": "float"},
+            {"minRangeValue": "float"},
+            {"maxRangeValue": "float"},
+            {"resetMinMaxMeaValues": "buffer"}
+        ]
+    },
+    "0xcc06": {
+        "params": [
+            {"flags": "uint8"},
+            {"dInState": "bool"}, 
+            {"counter": "uint8"},
+            {"counterReset": "buffer"},
+            {"sensorType": "string"},
+            {"busyToClearDelay": "uint16"},
+            {"clearToBusyDelay": "uint16"}
+        ]
+    },
+    "0xcc07": {
+        "params": [
+            {"flags": "uint8"},
+            {"sensorValue": "float"}, 
+            {"units": "string"},
+            {"minMeaValue": "float"},
+            {"maxMeaValue": "float"},
+            {"minRangeValue": "float"},
+            {"maxRangeValue": "float"},
+            {"resetMinMaxMeaValues": "buffer"}
+        ]
+    },
+    "0xcc08": {
+        "params": [
+            {"flags": "uint8"},
+            {"sensorValue": "float"},
+            {"units": "string"},
+            {"minMeaValue": "float"},
+            {"maxMeaValue": "float"},
+            {"minRangeValue": "float"},
+            {"maxRangeValue": "float"},
+            {"resetMinMaxMeaValues": "buffer"}
+        ]
+    },
+    "0xcc09": {
+        "params": [
+            {"flags": "uint32"},
+            {"instActivePwr": "float"}, 
+            {"minMeaActivePwr": "float"},
+            {"maxMeaActivePwr": "float"},
+            {"minRangeActivePwr": "float"},
+            {"maxRangeActivePwr": "float"},
+            {"cumulActivePwr": "float"},
+            {"activePwrCal": "float"},
+            {"instReactivePwr": "float"},
+            {"minMeaReactivePwr": "float"},
+            {"maxMeaReactivePwr": "float"},
+            {"minRangeReactivePwr": "float"},
+            {"maxRangeReactivePwr": "float"},
+            {"resetMinMaxMeaValues": "buffer"},
+            {"cumulReactivePwr": "float"},
+            {"reactivePwrCal": "float"},
+            {"pwrFactor": "float"},
+            {"currCal": "float"},
+            {"resetCumulEnergy": "buffer"}
+        ]
+    },
+    "0xcc0a": {
+        "params": [
+            {"flags": "uint8"},
+            {"onOff": "bool"}, 
+            {"dimmer": "uint8"},
+            {"onTime": "uint16"},
+            {"mStateOut": "string"},
+            {"appType": "string"}
+        ]
+    },
+    "0xcc0b": {
+        "params": [
+            {"flags": "uint8"},
+            {"setPointValue": "float"},
+            {"colour": "string"},
+            {"units": "string"},
+            {"appType": "string"}
+        ]
+    },
+    "0xcc0c": {
+        "params": [
+            {"flags": "uint8"},
+            {"eventId": "string"}, 
+            {"startTime": "uint32"}, 
+            {"durationInMin": "uint16"},
+            {"criticalLevel": "uint8"},
+            {"avgLoadAdjPct": "uint8"},
+            {"dutyCycle": "uint8"}
+        ]
+    },
+    "0xcc0d": {
+        "params": [
+            {"flags": "uint8"},
+            {"onOff": "bool"}, 
+            {"dimmer": "uint8"},
+            {"colour": "string"},
+            {"units": "string"},
+            {"onTime": "uint16"},
+            {"cumulActivePwr": "float"},
+            {"pwrFactor": "float"}
+        ]
+    },
+    "0xcc0e": {
+        "params": [
+            {"flags": "uint8"},
+            {"onOff": "bool"},  
+            {"dimmer": "uint8"},
+            {"onTime": "uint16"},
+            {"cumulActivePwr": "float"},
+            {"pwrFactor": "float"}
+        ]
+    },
+    "0xcc0f": {
+        "params": [
+            {"flags": "uint8"},
+            {"xValue": "float"}, 
+            {"yValue": "float"},
+            {"zValue": "float"},
+            {"units": "string"},
+            {"minRangeValue": "float"},
+            {"maxRangeValue": "float"}
+        ]
+    },
+    "0xcc10": {
+        "params": [
+            {"flags": "uint8"},
+            {"xValue": "float"}, 
+            {"yValue": "float"},
+            {"zValue": "float"},
+            {"units": "string"},
+            {"compassDir": "float"}
+        ]
+    },
+    "0xcc11": {
+        "params": [
+            {"flags": "uint8"},
+            {"sensorValue": "float"}, 
+            {"units": "string"},
+            {"minMeaValue": "float"},
+            {"maxMeaValue": "float"},
+            {"minRangeValue": "float"},
+            {"maxRangeValue": "float"},
+            {"resetMinMaxMeaValues": "buffer"}
+        ]
+    }
+}
