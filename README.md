@@ -10,6 +10,7 @@ ipso-ble-char
 3. [Usage](#Usage)  
 4. [APIs](#APIs)  
 5. [Table of Characteristics](#Table)
+6. [License](#License)
 
 <br />
 
@@ -118,3 +119,63 @@ var charParams = ipsoChar.getParams(0xcc00);
 <a name="Table"></a>
 ## 5. Table of Characteristics
 
+Following table are cross-references between the IPSO Smart Object and Characteristic UUID defined by this document.Here is the description of each column in the table:
+
+* IPSO Object
+    * Object name and object ID defined by IPSO Alliance
+* Characteristic UUID
+    * Characteristic UUID corresponding to IPSO Object
+* Field Names
+    * Characteristic value is an object formed from these properties
+    * Field name followed by `(M)` indicates it is mandatory, otherwise, it is optional
+* Field Types 
+    * Indicate data type of each property in `Field Names` column
+
+| IPSO Object               | Characteristic UUID | Field Names                                                                                                                                                                                                                                                                                                                     | Field Types                                                                                                                            |
+|---------------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Digital Input (3200)      | 0xcc00              | flags(M), dInState(M), counter, dInPolarity, debouncePeriod, edgeSelection, counterReset, appType, sensorType                                                                                                                                                                                                                   | uint8, bool, uint8, bool, uint16, uint8, buffer, string, string                                                                        |
+| Digital Output (3201)     | 0xcc01              | flags(M), dOutState(M), dOutPolarity, appType                                                                                                                                                                                                                                                                                   | uint8, bool, bool, string                                                                                                              |
+| Analogue Input (3202)     | 0xcc02              | flags(M), aInCurrValue(M), minMeaValue, maxMeaValue, minRangeValue, maxRangeValue, resetMinMaxMeaValues, appType, sensorType                                                                                                                                                                                                    | uint8, float, float, float, float, float, buffer, string, string                                                                       |
+| Analogue Output (3203)    | 0xcc03              | flags(M), aOutCurrValue(M), minRangeValue, maxRangeValue, appType                                                                                                                                                                                                                                                               | uint8, float, float, float, string                                                                                                     |
+| Generic Sensor (3300)     | 0xcc04              | flags(M), sensorValue(M), units, minMeaValue, maxMeaValue, minRangeValue, maxRangeValue, resetMinMaxMeaValues, appType, sensorType                                                                                                                                                                                              | uint8, float, string, float, float, float, float, buffer, string, string                                                               |
+| Illuminance Sensor (3301) | 0xcc05              | flags(M), sensorValue(M), units, minMeaValue, maxMeaValue, minRangeValue, maxRangeValue, resetMinMaxMeaValues                                                                                                                                                                                                                   | uint8, float, string, float, float, float, float, buffer                                                                               |
+| Presence Sensor (3302)    | 0xcc06              | flags(M), dInState(M), counter, counterReset, sensorType, busyToClearDelay, clearToBusyDelay                                                                                                                                                                                                                                    | uint8, bool, uint8, buffer, string, uint16, uint16                                                                                     |
+| Temperature Sensor (3303) | 0xcc07              | flags(M), sensorValue(M), units, minMeaValue, maxMeaValue, minRangeValue, maxRangeValue, resetMinMaxMeaValues                                                                                                                                                                                                                   | uint8, float, string, float, float, float, float, buffer                                                                               |
+| Humidity Sensor (3304)    | 0xcc08              | flags(M), sensorValue(M), units, minMeaValue, maxMeaValue, minRangeValue, maxRangeValue, resetMinMaxMeaValues                                                                                                                                                                                                                   | uint8, float, string, float, float, float, float, buffer                                                                               |
+| Power Measurement (3305)  | 0xcc09              | flags(M), instActivePwr(M), minMeaActivePwr, maxMeaActivePwr, minRangeActivePwr, maxRangeActivePwr, cumulActivePwr, activePwrCal, instReactivePwr, minMeaReactivePwr, maxMeaReactivePwr, minRangeReactivePwr, maxRangeReactivePwr, resetMinMaxMeaValues, cumulReactivePwr, reactivePwrCal, pwrFactor, currCal, resetCumulEnergy | uint32, float, float, float, float, float, float, float, float, float, float, float, float, buffer, float, float, float, float, buffer |
+| Actuation (3306)          | 0xcc0a              | flags(M), onOff(M), dimmer, onTime, mStateOut, appType                                                                                                                                                                                                                                                                          | uint8, bool, uint8, uint16, string, string                                                                                             |
+| Set Point (3308)          | 0xcc0b              | flags(M), setPointValue(M), colour, units, appType                                                                                                                                                                                                                                                                              | uint8, float, string, string, string                                                                                                   |
+| Load Control (3310)       | 0xcc0c              | flags(M), eventId(M), startTime(M), durationInMin(M), criticalLevel, avgLoadAdjPct, dutyCycle                                                                                                                                                                                                                                   | uint8, string, uint32, uint16, uint8, uint8, uint8                                                                                     |
+| Light Control (3311)      | 0xcc0d              | flags(M), onOff(M), dimmer, colour, units, onTime, cumulActivePwr, pwrFactor                                                                                                                                                                                                                                                    | uint8, bool, uint8, string, string, uint16, float, float                                                                               |
+| Power Control (3312)      | 0xcc0e              | flags(M), onOff(M), dimmer, onTime, cumulActivePwr, pwrFactor                                                                                                                                                                                                                                                                   | uint8, bool, uint8, uint16, float, float                                                                                               |
+| Accelerometer (3313)      | 0xcc0f              | flags(M), xValue(M), yValue, zValue, units, minRangeValue, maxRangeValue                                                                                                                                                                                                                                                        | uint8, float, float, float, string, float, float                                                                                       |
+| Magnetometer (3314)       | 0xcc10              | flags(M), xValue(M), yValue, zValue, units, compassDir                                                                                                                                                                                                                                                                          | uint8, float, float, float, string, float                                                                                              |
+| Barometer (3315)          | 0xcc11              | flags(M), sensorValue(M), units, minMeaValue, maxMeaValue, minRangeValue, maxRangeValue, resetMinMaxMeaValues                                                                                                                                                                                                                   | uint8, float, string, float, float, float, float, buffer          
+
+<br />
+
+<a name="License"></a>
+## 6. License         
+
+The MIT License (MIT)
+
+Copyright (c) 2016
+Hedy Wang <hedywings@gmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:  
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.                                                         |
