@@ -35,7 +35,7 @@ DEFS.getUuid = function (oid) {
 };
 
 DEFS.getParams = function (uuid) {
-    var params = [],
+    var params = { mandatory: [], optional: [] },
         paramObj;
 
     if (typeof uuid !== 'string' && typeof uuid !== 'number')
@@ -46,9 +46,14 @@ DEFS.getParams = function (uuid) {
 
     paramObj = _defs[uuid].params;
 
-    paramObj.forEach(function (item, idx) {
+    paramObj.mandatory.forEach(function (item, idx) {
         var name = Object.keys(item)[0];
-        params.push({name: name, type: item[name]});
+        params.mandatory.push({name: name, type: item[name]});
+    });
+
+    paramObj.optional.forEach(function (item, idx) {
+        var name = Object.keys(item)[0];
+        params.optional.push({name: name, type: item[name]});
     });
 
     return params;
