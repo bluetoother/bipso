@@ -1,6 +1,6 @@
 {
   "name": "ipso-ble-char",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/hedywings/ipso-ble-char/issues"
   },
-  "homepage": "https://github.com/hedywings/ipso-ble-char#readme"
+  "homepage": "https://github.com/hedywings/ipso-ble-char#readme",
+  "dependencies": {
+    "enum": "^2.3.0",
+    "lodash": "^4.12.0"
+  }
 }
