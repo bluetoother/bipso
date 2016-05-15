@@ -331,14 +331,18 @@
         }
     },
     "0xcc0e": {
-        "params": [
-            {"flags": "uint8"},
-            {"onOff": "boolean"},  
-            {"dimmer": "uint8"},
-            {"onTime": "uint16"},
-            {"cumulActivePwr": "float"},
-            {"pwrFactor": "float"}
-        ]
+        "params": {
+            "mandatory": [
+                {"flags": "uint8"},
+                {"onOff": "boolean"}
+            ],
+            "optional": [
+                {"dimmer": "uint8"},
+                {"onTime": "uint16"},
+                {"cumulActivePwr": "float"},
+                {"pwrFactor": "float"}
+            ]
+        }
     },
     "0xcc0f": {
         "params": {
