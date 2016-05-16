@@ -112,11 +112,11 @@
                 {"dInState": "boolean"}
             ],
             "optional": [
-                {"dInCounter": "uint8"},
+                {"counter": "uint8"},
                 {"dInPolarity": "boolean"},
                 {"debouncePeriod": "uint16"},
                 {"edgeSelection": "uint8"},
-                {"dInCounterReset": "buffer"},
+                {"counterReset": "buffer"},
                 {"appType": "string"},
                 {"sensorType": "string"}
             ]
@@ -205,8 +205,8 @@
                 {"dInState": "boolean"}
             ],
             "optional": [
-                {"dInCounter": "uint8"},
-                {"dInCounterReset": "buffer"},
+                {"counter": "uint8"},
+                {"counterReset": "buffer"},
                 {"sensorType": "string"},
                 {"busyToClearDelay": "uint16"},
                 {"clearToBusyDelay": "uint16"}
@@ -690,7 +690,7 @@
         "params": {
             "mandatory": [
                 {"flags": "uint8"},
-                {"currTime": "uint32"}
+                {"currentTime": "uint32"}
             ],
             "optional": [
                 {"fracTime": "float"},
@@ -708,7 +708,7 @@
                 {"yValue": "float"},
                 {"zValue": "float"},
                 {"units": "string"},
-                {"minXVal": "float"},
+                {"minXValue": "float"},
                 {"maxXValue": "float"},
                 {"minYValue": "float"},
                 {"maxYValue": "float"},
@@ -754,7 +754,7 @@
         "params": {
             "mandatory": [
                 {"flags": "uint8"},
-                {"currPosition": "float"}
+                {"currentPos": "float"}
             ],
             "optional": [
                 {"transTime": "float"},
@@ -777,7 +777,7 @@
             ],
             "optional": [
                 {"level": "float"},
-                {"duration": "float"},
+                {"timeDuration": "float"},
                 {"appType": "string"}
             ]
         }
@@ -791,7 +791,7 @@
             "optional": [
                 {"trigger": "buffer"},
                 {"level": "float"},
-                {"duration": "float"},
+                {"soundDuration": "float"},
                 {"appType": "string"}
             ]
         }
@@ -800,17 +800,17 @@
         "params": {
             "mandatory": [
                 {"flags": "uint8"},
-                {"duration": "float"}
+                {"timeDuration": "float"}
             ],
             "optional": [
                 {"remainTime": "float"},
                 {"minOffTime": "float"},
                 {"trigger": "buffer"},
                 {"onOff": "boolean"},
-                {"dInCounter": "uint8"},
-                {"cumulTime": "float"},
-                {"dState": "boolean"},
                 {"counter": "uint8"},
+                {"cumulTime": "float"},
+                {"digitalState": "boolean"},
+                {"eventCounter": "uint8"},
                 {"mode": "uint8"},
                 {"appType": "string"}
             ]
@@ -841,7 +841,7 @@
                 {"dInState": "boolean"}
             ],
             "optional": [
-                {"dInCounter": "uint8"},
+                {"counter": "uint8"},
                 {"onTime": "uint16"},
                 {"offTime": "uint16"},
                 {"appType": "string"}
@@ -865,8 +865,8 @@
         "params": {
             "mandatory": [
                 {"flags": "uint8"},
-                {"increaseInState": "boolean"},
-                {"decreaseInState": "boolean"}
+                {"incInputState": "boolean"},
+                {"decInputState": "boolean"}
             ],
             "optional": [
                 {"upCounter": "uint8"},
@@ -882,7 +882,7 @@
             ],
             "optional": [
                 {"dInState": "boolean"},
-                {"dInCounter": "uint8"},
+                {"counter": "uint8"},
                 {"xValue": "float"},
                 {"yValue": "float"},
                 {"zValue": "float"},
@@ -915,7 +915,7 @@
                 {"dInState": "boolean"}
             ],
             "optional": [
-                {"dInCounter": "uint8"},
+                {"counter": "uint8"},
                 {"appType": "string"}
             ]
         }
@@ -924,7 +924,7 @@
         "params": {
             "mandatory": [
                 {"flags": "uint8"},
-                {"multistateInput": "uint8"}
+                {"mStateIn": "uint8"}
             ],
             "optional": [
                 {"appType": "string"}
