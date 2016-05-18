@@ -1,5 +1,5 @@
 {
-  "name": "ipso-ble-char",
+  "name": "bipso",
   "version": "0.0.2",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hedywings/ipso-ble-char.git"
+    "url": "git+https://github.com/hedywings/bipso.git"
   },
   "author": "Hedy Wang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hedywings/ipso-ble-char/issues"
+    "url": "https://github.com/hedywings/bipso/issues"
   },
-  "homepage": "https://github.com/hedywings/ipso-ble-char#readme",
+  "homepage": "https://github.com/hedywings/bipso#readme",
   "dependencies": {
     "enum": "^2.3.0",
     "lodash": "^4.12.0"
