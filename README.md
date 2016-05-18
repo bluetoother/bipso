@@ -1,4 +1,4 @@
-ipso-ble-char
+bipso
 ==================
 
 <br />
@@ -17,26 +17,26 @@ ipso-ble-char
 <a name="Overiew"></a>
 ## 1. Overview  
 
-**ipso-ble-char** is a set of BLE characteristic definition following IPSO Smart Object Guideline(). Each IPSO Smart Object is defined as a BLE characteristic in this document, and characteristic value is an object contains resources of IPSO Smart Object.
+**bipso** is a set of BLE characteristic definition following IPSO Smart Object Guideline(). Each IPSO Smart Object is defined as a BLE characteristic in this document, and characteristic value is an object contains resources of IPSO Smart Object.
 
 <br />
 
 <a name="Installation"></a>
 ## 2. Installation
 
-> $ npm install ipso-ble-char --save
+> $ npm install bipso --save
 
 <br />
 
 <a name="Usage"></a>
 ## 3. Usage
 
-**ipso-ble-char** provides you two getters, i.e. `getUuid()` and `getParams()`, to get Characteristic UUID and Characteristic value format.
+**bipso** provides you two getters, i.e. `getUuid()` and `getParams()`, to get Characteristic UUID and Characteristic value format.
 
 Here is a quick exemple:
 
 ```js
-var ipsoChar = require('ipso-ble-char'),
+var ipsoChar = require('bipso'),
     charUuid,
     charParam;
 
