@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hedywings/bipso.git"
+    "url": "git+https://github.com/bluetoother/bipso.git"
   },
   "author": "Hedy Wang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hedywings/bipso/issues"
+    "url": "https://github.com/bluetoother/bipso/issues"
   },
-  "homepage": "https://github.com/hedywings/bipso#readme",
+  "homepage": "https://github.com/bluetoother/bipso#readme",
   "dependencies": {
     "enum": "^2.3.0",
     "lodash": "^4.12.0"
