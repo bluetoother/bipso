@@ -1,5 +1,5 @@
 bipso
-==================
+========================
 
 <br />
 
@@ -9,30 +9,30 @@ bipso
 2. [Installation](#Installation)  
 3. [Usage](#Usage)  
 4. [APIs](#APIs)  
-5. [License](#License)
+5. [License](#License)  
 
 <br />
 
 <a name="Overiew"></a>
 ## 1. Overview  
 
-**bipso** is a dictionary of uuids defined by [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md), and each uuid is corresponding to a [IPSO Smart Object](http://www.ipso-alliance.org/ipso-community/resources/smart-objects-interoperability/). Please visit [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md) for more information.
+**bipso** is a dictionary of uuids defined by [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md), and each uuid is corresponding to a [IPSO Smart Object](http://www.ipso-alliance.org/ipso-community/resources/smart-objects-interoperability/). Please visit [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md) for more information.  
 
 <br />
 
 <a name="Installation"></a>
-## 2. Installation
+## 2. Installation  
 
 > $ npm install bipso --save
 
 <br />
 
 <a name="Usage"></a>
-## 3. Usage
+## 3. Usage  
 
-**bipso** provides you two getters, i.e. `getUuid()` and `getParams()`, to get Characteristic UUID and Characteristic value format.
+**bipso** provides you two getters, i.e. `getUuid()` and `getParams()`, to get Characteristic UUID and Characteristic value format.  
 
-Here is a quick exemple:
+Here is a quick exemple:  
 
 ```js
 var ipsoChar = require('bipso'),
@@ -49,74 +49,72 @@ charParam = ipsoChar.getParams(charUuid);
 <br />
 
 <a name="APIs"></a>
-## 4. APIs
+## 4. APIs  
 
-* [.getUuid()](#getUuid)
-* [.getParams()](#getParams)
+* [.getUuid()](#getUuid)  
+* [.getParams()](#getParams)  
 
-**************************************
-
+*************************************************
 <a name="getUuid"></a>
 ### .getUuid(oid)
 
-Get Characteristic UUID corresponding to IPSO Smart Object.
+Get Characteristic UUID corresponding to IPSO Smart Object.  
 
-**Arguments:**
+**Arguments:**  
 
-* `oid`(_String_ | _Number_): Smart Object ID. `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+* `oid`(_String_ | _Number_): Smart Object ID. `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.  
 
-**Returns:**
+**Returns:**  
 
-* (_String_ | _Undefined_): Characteristic UUID or `undefined`
+* (_String_ | _Undefined_): Characteristic UUID or `undefined`.  
 
-**Example:**
+**Example:**  
 
 ```js
-ipsoChar.getUuid('dIn');    // '0xcc00'
+ipsoChar.getUuid('dIn');     // '0xcc00'
 ipsoChar.getUuid('3200');    // '0xcc00'
-ipsoChar.getUuid(3200);        // '0xcc00'
+ipsoChar.getUuid(3200);      // '0xcc00'
 
-ipsoChar.getUuid('1234');      // undefined
+ipsoChar.getUuid('1234');    // undefined
 ipsoChar.getUuid('xxxx');    // undefined
 ```
 
-**************************************
-
+*************************************************
 <a name="getParams"></a>
 ### .getParams(uuid)
 
-Get Characteristic parameters definition.
+Get Characteristic parameters definition.  
 
-**Arguments:**
+**Arguments:**  
 
-* `uuid`(_String_ | _Number_): Characteristic UUID defined in [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md).
+* `uuid`(_String_ | _Number_): Characteristic UUID defined in [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md).  
 
-**Returns:**
+**Returns:**  
 
-* (_Array_): An array of Characteristic parameter object.
+* (_Array_): An array of Characteristic parameter object.  
 
-**Example**
+**Example**  
 
 ```js
 var charParams = ipsoChar.getParams(0xcc00);
-    // charParams equal to 
+    // charParams equal to
     // [
-    //     {name: flags, type: uint8},
-    //     {name: dInState, type: boolean},
-    //     {name: counter, type: uint8},
-    //     {name: dInPolarity, type: boolean},
-    //     {name: debouncePeriod, type: uint16},
-    //     {name: edgeSelection, type: uint8},
-    //     {name: counterReset, type: buffer},
-    //     {name: appType, type: string},
-    //     {name: sensorType, type: string}
+    //     { name: flags, type: uint8 },
+    //     { name: dInState, type: boolean },
+    //     { name: counter, type: uint8 },
+    //     { name: dInPolarity, type: boolean },
+    //     { name: debouncePeriod, type: uint16 },
+    //     { name: edgeSelection, type: uint8 },
+    //     { name: counterReset, type: buffer },
+    //     { name: appType, type: string },
+    //     { name: sensorType, type: string }
     // ]
 ```
 
 <br />
 
 <a name="License"></a>
-## 5. License         
+## 5. License  
 
 The MIT License (MIT)
 
@@ -128,7 +126,7 @@ of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:  
+furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
@@ -139,4 +137,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.                                                         |
+SOFTWARE.
