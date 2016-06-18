@@ -67,7 +67,7 @@ Get Characteristic UUID corresponding to IPSO Smart Object.
 
 **Returns:**
 
-* (_String_): Characteristic UUID or `undefined`
+* (_String_ | _Undefined_): Characteristic UUID or `undefined`
 
 **Example:**
 
@@ -89,11 +89,11 @@ Get Characteristic parameters definition.
 
 **Arguments:**
 
-* `uuid`(_String_ | _Number_): Characteristic UUID defined in this document.
+* `uuid`(_String_ | _Number_): Characteristic UUID defined in [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md).
 
 **Returns:**
 
-* (_Array_): Characteristic parameters object.
+* (_Array_): An array of Characteristic parameter object.
 
 **Example**
 
