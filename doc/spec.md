@@ -2,7 +2,7 @@
 
 ## 1. Introduction 
 
-In BLE, most characteristics defined by SIG can not correspond to real-world applications, so each BLE manufacturers will define their own private GATT definitions for their products, causing no compatibility between BLE applications.
+In BLE, most characteristics defined by SIG can not corresponding to real-world applications, so each BLE manufacturers will define their own private GATT definitions for their products, causing no compatibility between BLE applications.
 
 BIPSO Specifications is born to solve this problem, it is a set of BLE characteristic definitions following IPSO Smart Object Guideline([Smart Objects Starter Pack1.0](http://www.ipso-alliance.org/smart-object-guidelines/) and [Smart Objects Expansion Pack](http://www.ipso-alliance.org/so-expansion-pack/)). Each IPSO Smart Object is defined as a BLE characteristic in this document, and characteristic value is an object contains resources of IPSO Smart Object. 
 
@@ -11,7 +11,7 @@ BIPSO Specifications is born to solve this problem, it is a set of BLE character
 Following table are cross-references between the IPSO Smart Object and Characteristic UUID defined by this document. Here is the description of each column in the table:
 
 * IPSO Object
-    * Object name and object ID defined by IPSO Alliance
+    * Object name by IPSO Alliance
 * IPSO Object ID
     * IPSO Object identifier
 * Characteristic UUID
