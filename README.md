@@ -1,5 +1,6 @@
 bipso
 ========================
+An utility to help BLE developers define their Characteristics in an IPSO way.  
 
 <br />
 
@@ -9,14 +10,17 @@ bipso
 2. [Installation](#Installation)  
 3. [Usage](#Usage)  
 4. [APIs](#APIs)  
-5. [License](#License)  
+5. [Supported Data Types](#Types)  
+6. [License](#License)  
 
 <br />
 
 <a name="Overiew"></a>
 ## 1. Overview  
 
-**bipso** is a dictionary of uuids defined by [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md), and each uuid is corresponding to a [IPSO Smart Object](http://www.ipso-alliance.org/ipso-community/resources/smart-objects-interoperability/). Please visit [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md) for more information.  
+**bipso** is a dictionary for developers to query the UUIDs and Characteristic definition defined by the [BIPSO Specification](https://github.com/bluetoother/bipso/blob/master/doc/spec.md). With BIPSO, firmware developers can organize Characteristics in an ISPO way. This may help a BLE device/product 
+
+define IP-based Smart Objects by using a subset of BLE UUIDs.  
 
 <br />
 
@@ -30,35 +34,37 @@ bipso
 <a name="Usage"></a>
 ## 3. Usage  
 
-**bipso** provides you two getters, i.e. `getUuid()` and `getParams()`, to get Characteristic UUID and Characteristic value format.  
-
-Here is a quick exemple:  
+**bipso** provides you with only three APIs:  
+* `.ou()`: Get the BIPSO-defined Characteristic UUID by an Smart Object ID (oid).  
+* `.uo()`: Get the oid by an BIPSO-defined Characteristic UUID.  
+* `.spec()`: Get the definition of an BIPSO-defined Characteristic. The returned definition is a data object to show you what possible fields should be in the BIPSO-defined Characteristic value.  
 
 ```js
-var ipsoChar = require('bipso'),
-    charUuid,
-    charParam;
+var bipso = require('bipso');
 
-// get characteristic UUID
-charUuid = ipsoChar.getUuid('dIn');
+// Get the BIPSO-defined UUID from an oid  
+bipso.ou('dIn');
+// Get the oid from a BIPSO-defined UUID  
+bipso.uo('0xcc00');
 
-// get characteristic parameters
-charParam = ipsoChar.getParams(charUuid);
+// Get the definition of a BIPSO-defined Characteristic:
+bipso.spec('0xcc00');   // (1) from a BIPSO-defined UUID
+bipso.spec('dIn');      // (2) from an oid
 ```
-
 <br />
 
 <a name="APIs"></a>
 ## 4. APIs  
 
-* [.getUuid()](#getUuid)  
-* [.getParams()](#getParams)  
+* [.ou()](#ou)  
+* [.uo()](#uo)  
+* [.spec()](#spec)  
 
 *************************************************
-<a name="getUuid"></a>
-### .getUuid(oid)
+<a name="ou"></a>
+### .ou(oid)
 
-Get Characteristic UUID corresponding to IPSO Smart Object.  
+Get the BIPSO-defined Characteristic UUID by an Smart Object ID (oid).  
 
 **Arguments:**  
 
@@ -66,55 +72,119 @@ Get Characteristic UUID corresponding to IPSO Smart Object.
 
 **Returns:**  
 
-* (_String_ | _Undefined_): Characteristic UUID or `undefined`.  
+* (_String_ | _Undefined_): Returns the Characteristic UUID, or `undefined` if cannot be transformed.  
 
 **Example:**  
 
 ```js
-ipsoChar.getUuid('dIn');     // '0xcc00'
-ipsoChar.getUuid('3200');    // '0xcc00'
-ipsoChar.getUuid(3200);      // '0xcc00'
+bipso.ou('dIn');     // '0xcc00'
+bipso.ou('3200');    // '0xcc00'
+bipso.ou(3200);      // '0xcc00'
 
-ipsoChar.getUuid('1234');    // undefined
-ipsoChar.getUuid('xxxx');    // undefined
+bipso.ou('1234');    // undefined
+bipso.ou('xxxx');    // undefined
 ```
 
 *************************************************
-<a name="getParams"></a>
-### .getParams(uuid)
+<a name="uo"></a>
+### .uo(uuid)
 
-Get Characteristic parameters definition.  
+Get the oid by an BIPSO-defined Characteristic UUID.  
 
 **Arguments:**  
 
-* `uuid`(_String_ | _Number_): Characteristic UUID defined in [BIPSO Specifications](https://github.com/bluetoother/bipso/blob/master/doc/spec.md).  
+* `uuid`(_String_ | _Number_): Characteristic UUID defined in [BIPSO Specification](https://github.com/bluetoother/bipso/blob/master/doc/spec.md).  
 
 **Returns:**  
 
-* (_Array_): An array of Characteristic parameter object.  
+* (_String_ | _Undefined_): Returns the oid in string, or `undefined` if cannot be transformed.  
+
+**Example:**  
+
+```js
+bipso.uo('0xcc00');     // 'dIn'
+bipso.uo(0xcc00);       // 'dIn'
+bipso.uo(52224);        // 'dIn'
+
+bipso.uo('0x6300');     // undefined
+bipso.uo(0x6300);       // undefined
+bipso.uo(25344);        // undefined
+```
+
+*************************************************
+<a name="spec"></a>
+### .spec(id)
+
+Get the BIPSO Characteristic definition by an UUID or an oid. This API only accepts an id in string. An `id` starts with '0x' will be taken as an UUID, otherwiese it will be recognized as an oid.  
+
+**Arguments:**  
+
+* `id`(_String_): An UUID or an oid to find its BIPSO spec for. An `id` prefixed with '0x' will be taken as an UUID, otherwiese it will ne taken as an oid.  
+
+**Returns:**  
+
+* (_Object_): The spec object of BIPSO Characteristic definition. This object has the following properties:  
+
+| Property | Type    | Description                                                                |
+|----------|---------|----------------------------------------------------------------------------|
+| oid      | String  | Smart Object ID in string                                                  |
+| uuid     | String  | BIPSO-defined Characteristic ID in string                                  |
+| fields   | Object  | An object to show what possible fields should be in a Characteristic value |
+
+* The `fields` object has two properties `mandatory` and `optional`, and each of them is an array of [TODO], 
 
 **Example**  
 
 ```js
-var charParams = ipsoChar.getParams(0xcc00);
-    // charParams equal to
-    // [
-    //     { name: flags, type: uint8 },
-    //     { name: dInState, type: boolean },
-    //     { name: counter, type: uint8 },
-    //     { name: dInPolarity, type: boolean },
-    //     { name: debouncePeriod, type: uint16 },
-    //     { name: edgeSelection, type: uint8 },
-    //     { name: counterReset, type: buffer },
-    //     { name: appType, type: string },
-    //     { name: sensorType, type: string }
-    // ]
-```
+// Get the definition of a BIPSO-defined Characteristic:
+bipso.spec('0xcc00');   // (1) from a BIPSO-defined UUID
+bipso.spec('dIn');      // (2) from an oid
 
+// Returned object from (1) and (2)  
+// {
+//     oid: 'dIn',
+//     uuid: '0xcc00',
+//     fields: {
+//          madatory: [
+//              { name: 'flags',          type: 'uint8'   },
+//              { name: 'dInState',       type: 'boolean' }
+//          ],
+//          optional: [
+//              { name: 'counter',        type: 'uint8'   },
+//              { name: 'dInPolarity',    type: 'boolean' },
+//              { name: 'debouncePeriod', type: 'uint16'  },
+//              { name: 'edgeSelection',  type: 'uint8'   },
+//              { name: 'counterReset',   type: 'buffer'  },
+//              { name: 'appType',        type: 'string'  },
+//              { name: 'sensorType',     type: 'string'  }
+//         ]
+//     }
+// }
+```
 <br />
 
+<a name="Types"></a>
+## 5. Supported Data Types  
+
+Data types BIPSO supports are listed in the following table.  
+
+| Data Class | Supported Data Types                                                       |
+|------------|----------------------------------------------------------------------------|
+| String     | 'string' (should have a length byte at the beginning)                      |
+| Integer    | 'int8', 'uint8', 'int16', 'uint16', 'int32', 'uint32', 'int64', 'uint64'   |
+| Float      | 'float' (32-bit), 'double' (64-bit)                                        |
+| Boolean    | 'boolean' (1 for true, and 0 for false)                                    |
+| Opaque     | 'buffer' (should have a length byte at the beginning)                      |
+| Time       | 'time' (Unix time, an int32 number representing seconds since Jan 1, 1970) |
+| None       | 'none' (A field with this data type may be an Excutable Resource)          |
+
+[**Important!!**]
+* A 'string' data should be an UTF-8 string. In firmware, it should have a length byte precedes the string before sending it out.  
+* Integer and Float values are all little-endian.  
+* One should be noticed that the raw data of a `'buffer'` must indicate how long 
+
 <a name="License"></a>
-## 5. License  
+## 6. License  
 
 The MIT License (MIT)
 
