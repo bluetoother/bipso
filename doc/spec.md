@@ -1,23 +1,27 @@
-# BIPSO Specifications
+# BIPSO Specification
 
-## 1. Introduction  
+## Why BIPSO?  
 
-In BLE, most characteristics defined by SIG can not corresponding to real-world applications, so each BLE manufacturer will define their own private GATT definitions for their products, causing no compatibility between BLE applications.  
+With BLE, manufacturers can build up their application quickly and flexibly by using the SIG-defined Characteristics or by their own private GATT definitions, but sacrifices compatibility between BLE products. 
 
-BIPSO Specifications is born to solve this problem, it is a set of BLE characteristic definitions following IPSO Smart Object Guideline([Smart Objects Starter Pack1.0](http://www.ipso-alliance.org/smart-object-guidelines/) and [Smart Objects Expansion Pack](http://www.ipso-alliance.org/so-expansion-pack/)). Each IPSO Smart Object is defined as a BLE characteristic in this document, and characteristic value is an object contains resources of IPSO Smart Object.  
+_Imagine a scenario that you are a BLE light bulb user, you've got some in your home, and you are happy to control lights by your smartphone APP._  
+_Today, a bulb is broken and you're going to buy a new one for change. You find no bulb as same brand as those in your house, and you make your mind to buy a new one manufacturered by another brand. When you are home, install the new one on the wall, and you find that your current APP is just not working for the new one. Then, you download a specific APP for your new bulb, and now it's working. Soon, you find that switching APPs for controlling those lights is kind of annoying, that is not cool. You feel so frustrated with your BLE lights and, of course, your smartphone BLE APPs._  
 
-## 2. Table of BIPSO Characteristics  
+BIPSO Specification is born to solve this problem, it defines a set of BLE Characteristic that follows the IPSO Smart Object Guideline([Smart Objects Starter Pack1.0](http://www.ipso-alliance.org/smart-object-guidelines/) and [Smart Objects Expansion Pack](http://www.ipso-alliance.org/so-expansion-pack/)) for developers to build their applications with consistency. What BIPSO is doing is to trying to let you operate all BLE gadgets with only a single smartphone APP, and let BLE gadgets be IPSO-compatible.  
 
-Following table are cross-references between the IPSO Smart Object and Characteristic UUID defined by this document. Here is the description of each column in the table:  
+## BIPSO Characteristics  
 
-* IPSO Object
-    * Object name by IPSO Alliance.
-* IPSO Object ID
-    * IPSO Object identifier.
+In BIPSO, each IPSO Smart Object is defined as a BLE **Characteristic**, and **Characteristic Value** is a piece of data containing Resources on a Smart Object.  
+The following table are cross-references between the IPSO Smart Object and BIPSO Characteristic UUID, each column in this table is:  
+
+* IPSO Object  
+    * Object name and its numeric ID defined by IPSO Alliance.  
+* IPSO Object ID  
+    * IPSO Object identifier in string.  
 * Characteristic UUID
-    * Characteristic UUID corresponding to the IPSO Object.
+    * BIPSO-defined Characteristic UUID corresponding to the IPSO Object.
 * Fields
-    * Characteristic value is an object formed from these fields.
+    * Characteristic Value is an object formed from these fields.  
     * A Field of `fieldName(fieldType)` indicates that field name of characteristic value object and tells the data type.
     * Fields are divided into mandatory and optional, the mandatory field using bold typeface to represent, or it will be optional.
         * **flags** is used to indicate which optional parameters to use, it is bit mask, each bit represent a optional field.

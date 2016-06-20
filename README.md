@@ -18,7 +18,7 @@ An utility to help BLE developers define their Characteristics in an IPSO way.
 <a name="Overiew"></a>
 ## 1. Overview  
 
-**bipso** is a dictionary for developers to query the UUIDs and Characteristic definition defined by the [BIPSO Specification](https://github.com/bluetoother/bipso/blob/master/doc/spec.md). With BIPSO, firmware developers can organize Characteristics in an ISPO way. This may help a BLE device/product 
+**bipso** is a dictionary for developers to query the UUIDs and Characteristic definitions defined by the [BIPSO Specification](https://github.com/bluetoother/bipso/blob/master/doc/spec.md). With BIPSO, firmware developers can organize Characteristics in an ISPO way. This may help a BLE device/product 
 
 define IP-based Smart Objects by using a subset of BLE UUIDs.  
 
