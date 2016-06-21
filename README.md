@@ -1,6 +1,6 @@
 bipso
 ========================
-An utility to help BLE developers define their Characteristics in an IPSO way.  
+An utility to help BLE developers define Characteristics in an IPSO way.  
 
 <br />
 
@@ -18,10 +18,9 @@ An utility to help BLE developers define their Characteristics in an IPSO way.
 <a name="Overiew"></a>
 ## 1. Overview  
 
-**bipso** is a dictionary for developers to query the UUIDs and Characteristic definitions defined by the [BIPSO Specification](https://github.com/bluetoother/bipso/blob/master/doc/spec.md). With BIPSO, firmware developers can organize Characteristics in an ISPO way. This may help a BLE device/product 
-
-define IP-based Smart Objects by using a subset of BLE UUIDs.  
-
+**bipso** is a dictionary for developers to query the UUIDs and Characteristic definitions defined by BIPSO. With BIPSO, firmware developers can organize Characteristics in an IPSO way to make their BLE devices/products IPSO-compatible.  
+  
+Please see [BIPSO Specification](https://github.com/bluetoother/bipso/blob/master/doc/spec.md) to learn more about why BIPSO and what it is doing.  
 <br />
 
 <a name="Installation"></a>
@@ -37,7 +36,7 @@ define IP-based Smart Objects by using a subset of BLE UUIDs.
 **bipso** provides you with only three APIs:  
 * `.ou()`: Get the BIPSO-defined Characteristic UUID by an Smart Object ID (oid).  
 * `.uo()`: Get the oid by an BIPSO-defined Characteristic UUID.  
-* `.spec()`: Get the definition of an BIPSO-defined Characteristic. The returned definition is a data object to show you what possible fields should be in the BIPSO-defined Characteristic value.  
+* `.spec()`: Get the definition of an BIPSO-defined Characteristic. The returned definition is a data object to show you what possible fields should be in the BIPSO-defined **Characteristic Value**.  
 
 ```js
 var bipso = require('bipso');
@@ -119,19 +118,27 @@ Get the BIPSO Characteristic definition by an UUID or an oid. This API only acce
 
 **Arguments:**  
 
-* `id`(_String_): An UUID or an oid to find its BIPSO spec for. An `id` prefixed with '0x' will be taken as an UUID, otherwiese it will ne taken as an oid.  
+* `id`(_String_): An UUID or an oid to find its BIPSO spec for. An `id` prefixed with '0x' will be taken as an UUID, otherwiese it will be taken as an oid.  
 
 **Returns:**  
 
 * (_Object_): The spec object of BIPSO Characteristic definition. This object has the following properties:  
 
-| Property | Type    | Description                                                                |
-|----------|---------|----------------------------------------------------------------------------|
-| oid      | String  | Smart Object ID in string                                                  |
-| uuid     | String  | BIPSO-defined Characteristic ID in string                                  |
-| fields   | Object  | An object to show what possible fields should be in a Characteristic value |
+| Property | Type    | Description                                                                    |
+|----------|---------|--------------------------------------------------------------------------------|
+| oid      | String  | Smart Object ID in string                                                      |
+| uuid     | String  | BIPSO-defined Characteristic ID in string                                      |
+| fields   | Object  | An object to show what possible fields should be in a **Characteristic Value** |
 
-* The `fields` object has two properties `mandatory` and `optional`, and each of them is an array of [TODO], 
+* The `fields` object has two properties `mandatory` and `optional`, each is an array of field names and field types.  
+    * The `mandatory` property tells what fields a **Characteristic Value** must have.  
+    * The `optional` property tells what fields a **Characteristic Value** can have.  
+    * The mandatory field `flags` is a bit-vector to tell which optional fields does a **Characteristic Value** have. The following exmaple gives the spec of a 'dIn' Object, let's say if the flags has a value of `0000,0001` in binary, then the **Characteristic Value** does only have the `counter` field in it. If the flags is `0000,1110` in binary, then the **Characteristic Value** does have the `dInPolarity`, `debouncePeriod`, and `edgeSelection` fields in it.  
+
+| Property | Type    | Description                                                                                                |
+|----------|---------|------------------------------------------------------------------------------------------------------------|
+| madatory | Array   | Each element is an object of `{ name, type }`, and the **Characteristic Value** must have this field in it |
+| optional | Array   | Each element is an object of `{ name, type }`, and the **Characteristic Value** can have this field in it  |
 
 **Example**  
 
@@ -179,9 +186,9 @@ Data types BIPSO supports are listed in the following table.
 | None       | 'none' (A field with this data type may be an Excutable Resource)          |
 
 [**Important!!**]
-* A 'string' data should be an UTF-8 string. In firmware, it should have a length byte precedes the string before sending it out.  
+* A 'string' data should be an UTF-8 string. In firmware, it should have a length byte precedes the string in **Characteristic Value** raw data to indicate how long the string is.  
 * Integer and Float values are all little-endian.  
-* One should be noticed that the raw data of a `'buffer'` must indicate how long 
+* One should be noticed that, in firmware, it should have a length byte precedes the buffer in **Characteristic Value** raw data to indicate how many bytes the buffer is.  
 
 <a name="License"></a>
 ## 6. License  
