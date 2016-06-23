@@ -4,6 +4,12 @@ An utility to help BLE developers define Characteristics in an IPSO way.
 
 <br />
 
+[![NPM](https://nodei.co/npm/bipso.png?downloads=true)](https://nodei.co/npm/bipso/)  
+
+[![Travis branch](https://img.shields.io/travis/bluetoother/bipso/master.svg?maxAge=2592000)](https://travis-ci.org/bluetoother/bipso)
+[![npm](https://img.shields.io/npm/v/bipso.svg?maxAge=2592000)](https://www.npmjs.com/package/bipso)
+[![npm](https://img.shields.io/npm/l/bipso.svg?maxAge=2592000)](https://www.npmjs.com/package/bipso)
+
 ## Table of Contents  
 
 1. [Overview](#Overiew)  
