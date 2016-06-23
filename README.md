@@ -135,10 +135,10 @@ Get the BIPSO Characteristic definition by an UUID or an oid. This API only acce
     * The `optional` property tells what fields a **Characteristic Value** can have.  
     * The mandatory field `flags` is a bit-vector to tell which optional fields does a **Characteristic Value** have. The following exmaple gives the spec of a 'dIn' Object, let's say if the flags has a value of `0000,0001` in binary, then the **Characteristic Value** does only have the `counter` field in it. If the flags is `0000,1110` in binary, then the **Characteristic Value** does have the `dInPolarity`, `debouncePeriod`, and `edgeSelection` fields in it.  
 
-| Property | Type    | Description                                                                                                |
-|----------|---------|------------------------------------------------------------------------------------------------------------|
-| madatory | Array   | Each element is an object of `{ name, type }`, and the **Characteristic Value** must have this field in it |
-| optional | Array   | Each element is an object of `{ name, type }`, and the **Characteristic Value** can have this field in it  |
+| Property  | Type    | Description                                                                                                |
+|-----------|---------|------------------------------------------------------------------------------------------------------------|
+| mandatory | Array   | Each element is an object of `{ name, type }`, and the **Characteristic Value** must have this field in it |
+| optional  | Array   | Each element is an object of `{ name, type }`, and the **Characteristic Value** can have this field in it  |
 
 **Example**  
 
@@ -152,7 +152,7 @@ bipso.spec('dIn');      // (2) from an oid
 //     oid: 'dIn',
 //     uuid: '0xcc00',
 //     fields: {
-//          madatory: [
+//          mandatory: [
 //              { name: 'flags',          type: 'uint8'   },
 //              { name: 'dInState',       type: 'boolean' }
 //          ],

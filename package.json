@@ -1,10 +1,10 @@
 {
   "name": "bipso",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test-all"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/bluetoother/bipso#readme",
   "dependencies": {
-    "enum": "^2.3.0",
-    "lodash": "^4.12.0"
+    "enum": "^2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
   }
 }

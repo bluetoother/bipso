@@ -72,7 +72,7 @@ DEFS.spec = function (id) {
     if (!id.startsWith('0x'))
         id = this.ou(id);
 
-    defs.uuid = id,
+    defs.uuid = id;
     defs.oid = this.uo(id);
     paramObj = _defs[id].params;
 
