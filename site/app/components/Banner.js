@@ -34,15 +34,17 @@ var innerStyles = {
             fontSize: 66,
             fontFamily: 'Roboto,sans-serif',
             color: '#FFFFFF',
-            fontWeight: 200,
+            fontWeight: 400,
         },
         h2: {
-            fontSize: 18,
+            fontSize: 16,
             fontFamily: 'Roboto,sans-serif',
             lineHeight: '28px',
             paddingTop: 5,
-            marginBottom: 13,
+            marginTop: -55,
+            marginBottom: 40,
             letterSpacing: 0,
+            fontWeight: 300
         },
         taglineWhenLarge: {
             marginTop: 32,
@@ -77,6 +79,7 @@ var Banner = React.createClass({
         return (
             <InnerBanner style={styles.root}>
                 <div style={styles.tagline}>
+                    
                     <h1 style={styles.h1}>BIPSO</h1>
                     <h2 style={styles.h2}>
                         BIPSO help BLE developers define Characteristics in an IPSO way.

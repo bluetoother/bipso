@@ -11,7 +11,7 @@ var App = React.createClass({
     render: function () {
         return (
             <MuiThemeProvider>
-                <Head display='banner' />
+                <Head display='navbar' />
             </MuiThemeProvider>
         );
     }
