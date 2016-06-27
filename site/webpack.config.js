@@ -11,7 +11,8 @@ var PATHS = {
     build: path.join(__dirname, 'build'),                   // build folder: bundle code
     style: [
         // path.join(__dirname, 'node_modules', 'purecss'), // include css framework here if any
-        path.join(__dirname, 'app', 'styles', 'main.css')   // our app css, it is at /app/styles
+        path.join(__dirname, 'app', 'styles', 'main.css'),  // our app css, it is at /app/styles
+        path.join(__dirname, 'app', 'styles', 'markdown.css')
     ], 
     docs: path.join(__dirname, 'app', 'docs'),
     img: path.join(__dirname, 'app', 'img')

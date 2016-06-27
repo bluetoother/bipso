@@ -4,6 +4,7 @@ import marked from 'marked';
 /**************************************************/
 /*** <MarkdownElement text={you_markdown}/>     ***/
 /**************************************************/
+var mdcss = require('../styles/markdown.css');
 
 module.exports = React.createClass({
     propTypes: {
@@ -16,11 +17,11 @@ module.exports = React.createClass({
         var style = {
             marginTop: 20,
             marginBottom: 20,
-            padding: '10px'
+            padding: '0 50px'
         };
 
         return (
-            <div styles={style} dangerouslySetInnerHTML={{__html: marked(this.props.text)}} />
+            <div className={mdcss["markdown-body"]} styles={style} dangerouslySetInnerHTML={{__html: marked(this.props.text)}} />
         );
     }
 });

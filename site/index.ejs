@@ -3,6 +3,20 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+    	body {
+    		font-family: Roboto,sans-serif;
+
+            .example-appear {
+                opacity: 0.01;
+            }
+
+            .example-appear.example-appear-active {
+                opacity: 1;
+                transition: opacity .5s ease-in;
+            }
+    	}
+    </style>
   </head>
   <body>
     <div id="mybody"></div>

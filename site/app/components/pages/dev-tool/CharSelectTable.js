@@ -46,12 +46,6 @@ var CharSelectTable = React.createClass({
               <TableHeader displaySelectAll={this.state.showCheckboxes} adjustForCheckbox={this.state.showCheckboxes} enableSelectAll={this.state.enableSelectAll} >
 
                 <TableRow>
-                  <TableHeaderColumn colSpan="3" tooltip="Super Header" style={{textAlign: 'center'}}>
-                    Characterisitc Table
-                  </TableHeaderColumn>
-                </TableRow>
-
-                <TableRow>
                   <TableHeaderColumn tooltip="IPSO Resources">Fields</TableHeaderColumn>
                   <TableHeaderColumn tooltip="Data Type">Data Type</TableHeaderColumn>
                   <TableHeaderColumn tooltip="Mandatory">Mandatory</TableHeaderColumn>
