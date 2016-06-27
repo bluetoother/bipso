@@ -45,6 +45,10 @@ var common = {
                 query: {
                     presets: [ 'react', 'es2015' ]
                 }
+            },
+            {
+                test: /\.md$/,
+                loader: 'raw-loader',
             }
         ]
     },
