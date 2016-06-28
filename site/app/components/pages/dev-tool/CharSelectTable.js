@@ -24,6 +24,7 @@ var CharSelectTable = React.createClass({
         };
     },
     handleRowSelection: function (cells) {
+        console.log(cells);
         var selectedRids = [];
 
         cells.forEach(function (cellIndex) {
@@ -49,6 +50,7 @@ var CharSelectTable = React.createClass({
                   <TableHeaderColumn tooltip="IPSO Resources">Fields</TableHeaderColumn>
                   <TableHeaderColumn tooltip="Data Type">Data Type</TableHeaderColumn>
                   <TableHeaderColumn tooltip="Mandatory">Mandatory</TableHeaderColumn>
+                  <TableHeaderColumn tooltip="Description">Description</TableHeaderColumn>
                 </TableRow>
 
               </TableHeader>
@@ -60,10 +62,11 @@ var CharSelectTable = React.createClass({
                 stripedRows={this.state.stripedRows}
               >
                 {this.props.tableData.map( (row, index) => (
-                  <TableRow key={index} selected={row.mandatory} selectable={!row.mandatory}>
+                  <TableRow key={index} selected={row.selected ? row.selected : row.mandatory} selectable={!row.mandatory}>
                     <TableRowColumn>{row.rid}</TableRowColumn>
                     <TableRowColumn>{row.type}</TableRowColumn>
                     <TableRowColumn>{row.mandatory.toString()}</TableRowColumn>
+                    <TableRowColumn>{row.desc}</TableRowColumn>
                   </TableRow>
                   ))}
               </TableBody>

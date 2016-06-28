@@ -4,7 +4,7 @@ In BIPSO, an IPSO Smart Object will be mapped to a BLE **Characteristic** with a
   
 The following table are cross-references between a IPSO Smart Object and its BIPSO-defined Characteristic, each column in this table is:  
 
-* **Object ID**: IPSO Object identifier defined by IPSO Alliance. For example, **lightCtrl (3311)** is a light controller Smart Object, its ID is `'lightCtrl'` in string and `3311` in number.  
+* **Object ID**: IPSO Object identifier defined by IPSO Alliance. For example, **lightCtrl** is a light controller Smart Object, its ID is `'lightCtrl'` in string.  
 * **Char. UUID**: BIPSO-defined Characteristic UUID corresponding to an IPSO Object.  
 * **Possible Fields in Char. Value**: Possible fields within a Characteristic Value. For example, **sensorValue(float)** is a field named `'sensorValue'` and its value is a float number.  
     * The boldface field is mandatory while the other fields are optional Resources.  

@@ -13,6 +13,20 @@ module.exports = React.createClass({
     defaultProps: {
         text: ''
     },
+    componentWillMount() {;
+        marked.setOptions({
+            gfm: true,
+            tables: true,
+            breaks: false,
+            pedantic: false,
+            sanitize: false,
+            smartLists: true,
+            smartypants: false,
+            highlight: function(code, lang) {
+                return require('highlight.js').highlight(lang, code).value;
+            },
+        });
+    },
     render: function () {
         var style = {
             marginTop: 20,

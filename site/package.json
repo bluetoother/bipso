@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "bipso": "0.0.3",
+    "highlight.js": "^9.4.0",
     "material-ui": "^0.15.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",

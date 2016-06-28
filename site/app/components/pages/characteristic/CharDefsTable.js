@@ -26,9 +26,10 @@ module.exports = React.createClass({
 
         for(var index in this.props.table) {
             charArray.push(
-                <CharColoumn oid={index} 
-                             uuid= {this.props.table[index].uuid}
-                             desc= {this.props.table[index].desc} />
+                <CharColoumn
+                    oid={index} 
+                    uuid= {this.props.table[index].uuid}
+                    desc= {this.props.table[index].name} />
             );
         }
 
@@ -37,8 +38,8 @@ module.exports = React.createClass({
                 <Table selectable={false}>
                     <TableHeader displaySelectAll={false}>
                         <TableRow>
-                            <TableHeaderColumn>OID</TableHeaderColumn>
-                            <TableHeaderColumn>UUID</TableHeaderColumn>
+                            <TableHeaderColumn>Object ID</TableHeaderColumn>
+                            <TableHeaderColumn>Char. UUID</TableHeaderColumn>
                             <TableHeaderColumn>Description</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
