@@ -1,8 +1,8 @@
 var Enum = require('enum'),
     expect = require('chai').expect,
-    fs = require('fs'),
+    // fs = require('fs'),
     bipso = require('../index'),
-    BIPSODEF = JSON.parse(fs.readFileSync(__dirname + '/../defs/defs.json', { encoding: 'utf8' }));
+    BIPSODEF = require('../defs/defs.js');
 
 var DEFS = {};
 DEFS.oid = new Enum(BIPSODEF.oid);
