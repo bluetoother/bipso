@@ -7,11 +7,11 @@ import FontIcon from 'material-ui/FontIcon';
 import SvgIconFace from 'material-ui/svg-icons/action/face';
 import Divider from 'material-ui/Divider';
 import {blue300, indigo900} from 'material-ui/styles/colors';
-import MarkdownElement from '../../MarkdownElement';
+import MarkdownElement from './MarkdownElement';
 
 var bipso = require('bipso');
-var bipsoUuid = require('../../../misc/bipso_uuid');
-var resourceDesc = require('../../../misc/desc');
+var bipsoUuid = require('../misc/bipso_uuid');
+var resourceDesc = require('../misc/desc');
 var oidDefs = bipsoUuid.oid;
 
 function handleRequestDelete() {
@@ -205,8 +205,12 @@ var CharChooser = React.createClass({
                 <div style={{ display: 'inline' }}>UUID: {this.state.uuid}</div>
                 <Divider />
                 <CharSelectTable tableData={this.state.tableData} onRowSelected={this.handleResourceSelected} />
-                <div style={{paddingTop:'20px', color: '#212121'}}>
-                    <p style={{fontSize: 20}}>Sample Code</p>
+                <br />
+                <div style={{color: '#212121'}}>
+                    <p style={{fontSize: 20, fontWeight: 400}}>Sample Code</p>
+                        <li style={{marginLeft: '30px'}}>
+                            <p>Some value of resource may need to read from sensor or other device, e.g., 'dInState = readSersorValue();'</p>
+                        </li>
                     <MarkdownElement text={this.state.sampleCode} />
                 </div>
             </div>

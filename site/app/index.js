@@ -7,8 +7,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import HomePage from './components/pages/Home';
-import CharPage from './components/pages/characteristic/Page';
-import DevToolPage from './components/pages/dev-tool/Page';
+import CharPage from './components/pages/Char';
+import DevToolPage from './components/pages/DevTool';
 
 injectTapEventPlugin();
 

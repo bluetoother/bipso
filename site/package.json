@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --display-error-details",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "clean-webpack-plugin": "^0.1.9",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.21.0",
     "marked": "^0.3.5",
     "purifycss-webpack-plugin": "^2.0.3",
@@ -39,7 +41,7 @@
     "webpack-validator": "^2.2.0"
   },
   "dependencies": {
-    "bipso": "0.0.3",
+    "bipso": "0.0.4",
     "highlight.js": "^9.4.0",
     "material-ui": "^0.15.1",
     "react": "^15.1.0",

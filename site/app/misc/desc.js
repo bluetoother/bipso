@@ -1,4 +1,5 @@
 module.exports = { 
+  flags: 'It is a bit-vector to tell which optional fields does a Characteristic Value have.',
   dInPolarity: 'The polarity of the digital input as a Boolean (0 = Normal, 1= Reversed)',
   debouncePeriod: 'The debounce period in ms. .',
   edgeSelection: 'The edge selection as an integer (1 = Falling edge, 2 = Rising edge, 3 = Both Rising and Falling edge).',

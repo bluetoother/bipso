@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + "78c6adc7a9960e5c3865" + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + "ea983809fe8e94f6b2b4" + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -88,8 +88,8 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/bipso/";
 /******/ })
 /************************************************************************/
 /******/ ([]);
-//# sourceMappingURL=manifest.78c6adc7a9960e5c3865.js.map
+//# sourceMappingURL=manifest.ea983809fe8e94f6b2b4.js.map

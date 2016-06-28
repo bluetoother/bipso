@@ -17,7 +17,7 @@ var Navbar = React.createClass({
             >
                 <Tab 
                     icon={<ActionHome />}
-                    label="Home" style={styles} containerElement={<Link to="/" />} />
+                    label="Home" style={styles} linkButton containerElement={<Link to="/" />} />
                 <Tab 
                     icon={<ActionList />}
                     label="Chars" style={styles} containerElement={<Link to="/characteristic" />} />

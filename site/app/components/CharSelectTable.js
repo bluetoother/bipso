@@ -66,7 +66,7 @@ var CharSelectTable = React.createClass({
                     <TableRowColumn>{row.rid}</TableRowColumn>
                     <TableRowColumn>{row.type}</TableRowColumn>
                     <TableRowColumn>{row.mandatory.toString()}</TableRowColumn>
-                    <TableRowColumn>{row.desc}</TableRowColumn>
+                    <TableRowColumn style={{whiteSpace: 'initial'}}>{row.desc}</TableRowColumn>
                   </TableRow>
                   ))}
               </TableBody>

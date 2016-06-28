@@ -29,6 +29,7 @@ var common = {
     },
     output: {
         path: PATHS.build,              // put the output to /build
+        publicPath: '/bipso/',
         filename: '[name].[hash].js',   // output filename should be given when using multiple entries
         chunkFilename: '[hash].js'      // common chunks, async loaded modules
     },
@@ -56,7 +57,7 @@ var common = {
     },
     plugins: [
         new HtmlWebpackPlugin({ 
-            title: 'my webpack practice',
+            title: 'BIPSO',
             template: 'index.ejs'
         })
     ]
