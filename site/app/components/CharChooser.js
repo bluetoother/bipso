@@ -56,6 +56,7 @@ function getSampleCode (oid, rids) {
         oidInfo = bipsoUuid[oid],
         ridInfo = {},
         flagsVal = 0,
+        flagsStr,
         bufName = spec.oid + 'Buf',
         indexNum = 0,
         manStr = '',
@@ -93,7 +94,9 @@ function getSampleCode (oid, rids) {
         if (rid.name === 'flags') {
             str = (flagsVal > 15) ? '': '0';
             fieldVal = '0x' +  str +  flagsVal.toString(16);
-            manStr += getTypeStr(rid.type) + fieldName + ' = ' + fieldVal + ';    //' + flagsVal.toString(2) +'\n';
+            flagsStr = flagsVal.toString(2);
+            flagsStr = '00000000'.slice(flagsStr.length) + flagsStr;
+            manStr += getTypeStr(rid.type) + fieldName + ' = ' + fieldVal + ';    // 0b' + flagsStr +'\n';
         } else 
             manStr += getTypeStr(rid.type) + fieldName + ' = ' + fieldVal + ';\n';
     });
@@ -111,20 +114,25 @@ function getSampleCode (oid, rids) {
     });
 
     return (
+        '* Define your UUID in the header file\n' +
+        '\n' +
         '```c\n' + 
-        '//XXX.h\n' +
-        '#define ' + oidInfo.name.toUpperCase().replace(' ', '_') + '_CHAR_UUID        ' + oidInfo.uuid.toUpperCase() + '    // Declare a characteristic UUID defined in BIPSO\n' +
-        '#define ' + oidInfo.name.toUpperCase().replace(' ', '_') + '_CHAR             0         // Declare a characteristic value variable\n' +
+        '// xxx.h\n' +
+        '#define ' + oidInfo.name.toUpperCase().replace(' ', '_') + '_CHAR_UUID        ' + oidInfo.uuid.toUpperCase() + '    // Declare the BIPSO-defined Characteristic UUID\n' +
+        '```\n' +
         '\n' +
+        '* Create buffer of the Characteristic Value \n' +
         '\n' +
-        '//XXX.c\n' +
+        '```c\n' + 
+        '// xxx.c\n' +
         manStr +
         optStr +
         '\n' +
-        bufName + '[' + totalLen + '];\n' +
+        'uint8 ' + bufName + '[' + totalLen + '] = [0];\n' +
         '\n' +
         bufStr +
-        '```'
+        '```\n' + 
+        '*[Note]* A variable value may be read from somewhere, such as a gpio or a senser\n'
     );
 }
 
@@ -199,18 +207,17 @@ var CharChooser = React.createClass({
     },
     render: function () {
         return (
-            <div>
+            <div style={{color: '#212121'}}>
+                <h2>Development tool</h2>
+                    <p>This tool helps you create with the BIPSO-defined Characteristics in your firmware.</p>
                 Smart object:
                 <DropDownMenuLongMenu maxHeight={160} items={oids} onChanged={this.handleObjectSelected}/>
                 <div style={{ display: 'inline' }}>UUID: {this.state.uuid}</div>
                 <Divider />
                 <CharSelectTable tableData={this.state.tableData} onRowSelected={this.handleResourceSelected} />
                 <br />
-                <div style={{color: '#212121'}}>
-                    <p style={{fontSize: 20, fontWeight: 400}}>Sample Code</p>
-                        <li style={{marginLeft: '30px'}}>
-                            <p>Some value of resource may need to read from sensor or other device, e.g., 'dInState = readSersorValue();'</p>
-                        </li>
+                <div>
+                    <p style={{fontSize: 18, fontWeight: 400}}>Sample Code</p>
                     <MarkdownElement text={this.state.sampleCode} />
                 </div>
             </div>

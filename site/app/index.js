@@ -1,4 +1,4 @@
-import { Router, Route, Link, browserHistory, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, Link, browserHistory, IndexRoute, Redirect } from 'react-router';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -14,16 +14,30 @@ injectTapEventPlugin();
 
 var App = React.createClass({
     render: function () {
+        console.log(this.props.children);
+        return (
+            <div>
+                {this.props.children}
+            </div>
+        )
+    }
+});
+
+var WebApp = React.createClass({
+    render: function () {
         return (
             <MuiThemeProvider>
                 <Router history={browserHistory}>
-                   <Route path="/bipso" component={HomePage} />
-                       <Route path="/bipso/characteristic" component={CharPage} />
-                       <Route path="/bipso/devtool" component={DevToolPage} />
+                    <Route path='/' component={App}>
+                        <Route path='/bipso' component={HomePage} />
+                        <Route path="/bipso/characteristic" component={CharPage} />
+                        <Route path="/bipso/devtool" component={DevToolPage} />
+                    </Route>
                </Router>
             </MuiThemeProvider>
         );
     }
 });
-
-ReactDOM.render(<App />, document.getElementById('mybody'));
+ //<Route path="/bipso/characteristic" component={CharPage} />
+                        //<Route path="/bipso/devtool" component={DevToolPage} />
+ReactDOM.render(<WebApp />, document.getElementById('mybody'));

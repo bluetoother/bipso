@@ -13,7 +13,7 @@ var Navbar = React.createClass({
     render: function () {
         return (
             <Tabs initialSelectedIndex={this.props.selectedIndex}
-                style={{width: '50%', paddingLeft: '50%', backgroundColor: '#00ACC1', position: 'fixed', top: '0px'}}
+                style={{width: '50%', paddingLeft: '50%', backgroundColor: '#00ACC1', position: 'fixed', top: '0px', zIndex: 1}}
             >
                 <Tab 
                     icon={<ActionHome />}
