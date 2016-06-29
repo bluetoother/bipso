@@ -111,7 +111,7 @@ var Banner = React.createClass({
                                 className="demo-button"
                                 label="Characteristics"
                                 backgroundColor='rgba(255, 255, 255, 0)'
-                                containerElement={<Link to="/characteristic" />}
+                                containerElement={<Link to="/bipso/characteristic" />}
                                 style={styles.demoStyle}
                                 labelStyle={styles.label}
                             />
@@ -119,7 +119,7 @@ var Banner = React.createClass({
                                 className="demo-button"
                                 label="Dev Tool"
                                 backgroundColor='rgba(255, 255, 255, 0)'
-                                containerElement={<Link to="/devtool" />}
+                                containerElement={<Link to="/bipso/devtool" />}
                                 style={styles.demoStyle}
                                 labelStyle={styles.label}
                             />

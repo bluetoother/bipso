@@ -50,11 +50,11 @@ parts.extractCSS = function (paths) {
     return {
         module: {
             loaders: [
-                {
-                    test: /\.css$/,
-                    loader: 'style!css?modules&localIdentName=[name]__[local]-[hash:base64:5]',
-                    exclude: paths
-                },
+                // {
+                //     test: /\.css$/,
+                //     loader: 'style!css?modules&localIdentName=[name]__[local]-[hash:base64:5]',
+                //     exclude: paths
+                // },
                 {
                     test: /\.css$/,
                     loader: ExtractTextPlugin.extract('style', 'css'),

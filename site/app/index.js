@@ -17,10 +17,10 @@ var App = React.createClass({
         return (
             <MuiThemeProvider>
                 <Router history={browserHistory}>
-                    <Route path="/" component={HomePage} />
-                    <Route path="/characteristic" component={CharPage} />
-                    <Route path="/devtool" component={DevToolPage} />
-                </Router>
+                   <Route path="/bipso" component={HomePage} />
+                       <Route path="/bipso/characteristic" component={CharPage} />
+                       <Route path="/bipso/devtool" component={DevToolPage} />
+               </Router>
             </MuiThemeProvider>
         );
     }

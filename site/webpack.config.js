@@ -74,8 +74,9 @@ switch (process.env.npm_lifecycle_event) {  // npm_lifecycle_event identifies wh
             parts.clean(PATHS.build),                                       // [ plugin ] check and clean the old build needs to be cleaned
             parts.setFreeVariable('process.env.NODE_ENV', 'production'),    // [ plugin ] set up environment var to a var
             parts.extractBundle({ name: 'vendor', entries: [ 'react' ]}),   // [ plugin ] bundle vendor lib to a separated file vendor.js, and create manifest.js
-            // parts.minify(),                                                 // [ plugin ] ugilify javascripts
-            parts.extractCSS(PATHS.style)                                   // [ loader + plugin ] extract css to a separated file, production only
+            parts.minify(),                                                 // [ plugin ] ugilify javascripts
+            parts.setupCSS(PATHS.style)
+            // parts.extractCSS(PATHS.style)                                   // [ loader + plugin ] extract css to a separated file, production only
             // parts.purifyCSS(PATHS.style)                                 // [ plugin ] extract used css
         );
         break;
@@ -83,7 +84,7 @@ switch (process.env.npm_lifecycle_event) {  // npm_lifecycle_event identifies wh
         config = merge(
             common,
             { devtool: 'eval-source-map'},
-            parts.setupCSS(PATHS.app),                                      // [ loader ] css loader
+            parts.setupCSS(PATHS.style),                                      // [ loader ] css loader
             parts.devServer({                                               // [ config + plugin ] setup dev-server and HMR support
                 host: process.env.HOST,
                 port: process.env.PORT
