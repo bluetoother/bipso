@@ -208,8 +208,7 @@ var CharChooser = React.createClass({
     render: function () {
         return (
             <div style={{color: '#212121'}}>
-                <h2>Development tool</h2>
-                    <p>This tool helps you create with the BIPSO-defined Characteristics in your firmware.</p>
+                <p style={{fontSize: 22}}>This tool generates a snippet of C sample code for your reference in creating BIPSO-defined Characteristics.</p>
                 Smart object:
                 <DropDownMenuLongMenu maxHeight={160} items={oids} onChanged={this.handleObjectSelected}/>
                 <div style={{ display: 'inline' }}>UUID: {this.state.uuid}</div>
