@@ -30,6 +30,7 @@ var WebApp = React.createClass({
                 <Router history={browserHistory}>
                     <Route path='/bipso' component={App} >
                         <IndexRoute component={HomePage} />
+                        <Route path="/bipso/index.html" component={HomePage} />
                         <Route path="/bipso/characteristic" component={CharPage} />
                         <Route path="/bipso/devtool" component={DevToolPage} />
                     </Route>
