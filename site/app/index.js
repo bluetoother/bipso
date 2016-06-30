@@ -1,4 +1,4 @@
-import { Router, Route, Link, browserHistory, IndexRoute, Redirect } from 'react-router';
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -17,7 +17,7 @@ var App = React.createClass({
         console.log(this.props.children);
         return (
             <div>
-                {this.props.children}
+                {this.props.children || <HomePage />}
             </div>
         )
     }
@@ -28,16 +28,15 @@ var WebApp = React.createClass({
         return (
             <MuiThemeProvider>
                 <Router history={browserHistory}>
-                    <Route path='/' component={App}>
-                        <Route path='/bipso' component={HomePage} />
-                        <Route path="/bipso/characteristic" component={CharPage} />
-                        <Route path="/bipso/devtool" component={DevToolPage} />
+                    <Route path='/' component={App} >
+                        <IndexRoute component={HomePage} />
+                        <Route path="/characteristic" component={CharPage} refresh />
+                        <Route path="/devtool" component={DevToolPage} refresh />
                     </Route>
                </Router>
             </MuiThemeProvider>
         );
     }
 });
- //<Route path="/bipso/characteristic" component={CharPage} />
-                        //<Route path="/bipso/devtool" component={DevToolPage} />
+
 ReactDOM.render(<WebApp />, document.getElementById('mybody'));

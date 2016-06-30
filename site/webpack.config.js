@@ -29,7 +29,7 @@ var common = {
     },
     output: {
         path: PATHS.build,              // put the output to /build
-        publicPath: '/bipso/',
+        publicPath: '/',
         filename: '[name].[hash].js',   // output filename should be given when using multiple entries
         chunkFilename: '[hash].js'      // common chunks, async loaded modules
     },
