@@ -17,13 +17,13 @@ var Navbar = React.createClass({
             >
                 <Tab 
                     icon={<ActionHome />}
-                    label="Home" containerElement={<Link to="/" />} />
+                    label="Home" containerElement={<Link to="/bipso" />} />
                 <Tab 
                     icon={<ActionList />}
-                    label="Chars" containerElement={<Link to="/characteristic" />} />
+                    label="Chars" containerElement={<Link to="/bipso/characteristic" />} />
                 <Tab
                     icon={<ActionBuild />}
-                    label="Dev Tool" containerElement={<Link to="/devtool" />} />
+                    label="Dev Tool" containerElement={<Link to="/bipso/devtool" />} />
             </Tabs>
         );
     }

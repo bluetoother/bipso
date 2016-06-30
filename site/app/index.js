@@ -28,10 +28,10 @@ var WebApp = React.createClass({
         return (
             <MuiThemeProvider>
                 <Router history={browserHistory}>
-                    <Route path='/' component={App} >
+                    <Route path='/bipso' component={App} >
                         <IndexRoute component={HomePage} />
-                        <Route path="/characteristic" component={CharPage} refresh />
-                        <Route path="/devtool" component={DevToolPage} refresh />
+                        <Route path="/bipso/characteristic" component={CharPage} />
+                        <Route path="/bipso/devtool" component={DevToolPage} />
                     </Route>
                </Router>
             </MuiThemeProvider>
