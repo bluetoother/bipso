@@ -1,17 +1,20 @@
 'use strict';
 
-var fs = require('fs'),
-    Enum = require('enum'),
-    _defs = JSON.parse(fs.readFileSync(__dirname + '/defs/defs.json', { encoding: 'utf8' })),
+var /*fs = require('fs'),
+    */Enum = require('enum'),
+    // _defs = JSON.parse(fs.readFileSync(__dirname + '/defs/defs.json', { encoding: 'utf8' })),
+    _defs = require('./defs/defs.js'),
     DEFS = {
         ipsoCharUuid: null
     };
 
+var __defs = {};
+
 /*************************************************************************************************/
 /*** Loading Enumerations                                                                      ***/
 /*************************************************************************************************/
-_defs.oid = new Enum(_defs.oid);
-_defs.ipsoCharUuid = new Enum(_defs.ipsoCharUuid);
+__defs.oid = new Enum(_defs.oid);
+__defs.ipsoCharUuid = new Enum(_defs.ipsoCharUuid);
 
 
 /*************************************************************************************************/
@@ -27,12 +30,12 @@ DEFS.ou = function (oid) {
     if (!isNaN(oidNum))
         oid = oidNum;
 
-    oidName = _defs.oid.get(oid);
+    oidName = __defs.oid.get(oid);
 
     if (!oidName) {
         return;
     } else {
-        return '0x' + _defs.ipsoCharUuid.get(oidName.key).value.toString(16);
+        return '0x' + __defs.ipsoCharUuid.get(oidName.key).value.toString(16);
     }
 };
 
@@ -46,7 +49,7 @@ DEFS.uo = function (uuid) {
     if (!isNaN(uuidNum))
         uuid = uuidNum;
 
-    oidName = _defs.ipsoCharUuid.get(uuid);
+    oidName = __defs.ipsoCharUuid.get(uuid);
 
     if (!oidName) {
         return;

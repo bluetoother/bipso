@@ -1,4 +1,4 @@
-{
+module.exports = {
     "oid": {
         "dIn": 3200,
         "dOut": 3201,
