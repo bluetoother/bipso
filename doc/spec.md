@@ -14,7 +14,7 @@ _Imagine a scenario that you are a BLE light bulb user, you've got some in your 
 
 BIPSO is born to solve this problem of consistency and compatibility for BLE applications. It defines a set of BLE Characteristics that follows the [IPSO Smart Object Guideline](http://www.ipso-alliance.org/smart-object-guidelines/) for developers to build their applications with an unified data model. You don't have to worry about how to map a real-world gadget into BLE Characteristics, IPSO and BIPSO have modeled many for you.  
 
-BIPSO is to trying to let you operate all BLE gadgets with only a single smartphone APP, and let BLE gadgets be IPSO-compatible.  
+BIPSO is trying to let you operate all BLE gadgets with only a single smartphone APP, and let BLE gadgets be IPSO-compatible.  
 
 ## BIPSO Characteristics  
 
