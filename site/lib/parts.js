@@ -23,8 +23,7 @@ parts.devServer = function (opts) {
             lazy: false,
             stats: 'errors-only',
             host: opts.host,
-            port: opts.port,
-            contentBase: "http://localhost:8080/bipso"
+            port: opts.port
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin({ multiStep: true })

@@ -118,7 +118,7 @@ function getSampleCode (oid, rids) {
         '\n' +
         '```c\n' + 
         '// xxx.h\n' +
-        '#define ' + oidInfo.name.toUpperCase().replace(' ', '_') + '_CHAR_UUID        ' + oidInfo.uuid.toUpperCase() + '    // Declare the BIPSO-defined Characteristic UUID\n' +
+        '#define ' + oidInfo.name.toUpperCase().replace(' ', '_') + '_CHAR_UUID        0x' + oidInfo.uuid.toUpperCase().substr(2, 5) + '    // Declare the BIPSO-defined Characteristic UUID\n' +
         '```\n' +
         '\n' +
         '* Create buffer of the Characteristic Value \n' +
@@ -128,11 +128,11 @@ function getSampleCode (oid, rids) {
         manStr +
         optStr +
         '\n' +
-        'uint8 ' + bufName + '[' + totalLen + '] = [0];\n' +
+        'uint8 ' + bufName + '[' + totalLen + '] = {0};\n' +
         '\n' +
         bufStr +
         '```\n' + 
-        '*[Note]* A variable value may be read from somewhere, such as a gpio or a senser\n'
+        '*[Note]* A variable value may be read from somewhere, such as a gpio or a sensor\n'
     );
 }
 
@@ -144,6 +144,8 @@ function getTypeStr (type) {
             return 'uint8  ';
         case 'uint16':
             return 'uint16 ';
+        case 'uint32':
+            return 'uint32 ';
         case 'float':
             return 'float  ';
         case 'boolean':
@@ -169,6 +171,10 @@ function getTypeVal (type, rInfo) {
             rInfo.len = 2;
             totalLen += 2;
             return Math.floor(Math.random() * 65535);
+        case 'uint32':
+            rInfo.len = 4;
+            totalLen += 4;
+            return Math.floor(Math.random() * 4294967295);
         case 'float':
             rInfo.len = 4;
             totalLen += 4;
@@ -208,7 +214,7 @@ var CharChooser = React.createClass({
     render: function () {
         return (
             <div style={{color: '#212121'}}>
-                <p style={{fontSize: 18, marginTop: '-15px'}}>This tool generates a snippet of C sample code for your reference in creating BIPSO-defined Characteristics.</p>
+                <p style={{fontSize: 18, marginTop: '-15px'}}>This tool generates a snippet of C code for your reference in creating BIPSO-defined Characteristics (in your firmware).</p>
                 Smart object:
                 <DropDownMenuLongMenu maxHeight={160} items={oids} onChanged={this.handleObjectSelected}/>
                 <div style={{ display: 'inline' }}>UUID: {this.state.uuid}</div>
