@@ -20,7 +20,7 @@ BIPSO is trying to let you operate all BLE gadgets with only a single smartphone
 
 In BIPSO, an IPSO Smart Object will be mapped to a BLE **Characteristic** with a well-defined **Characteristic Value**. The **Characteristic Value** is a piece of data containing IPSO Resources on a Smart Object.  
   
-The following table are cross-references between a IPSO Smart Object and its BIPSO-defined Characteristic, each column in this table is:  
+The following table is a cross-reference between a IPSO Smart Object and its BIPSO-defined Characteristic, each column in this table is:  
 
 * **Object ID**: IPSO Object identifier defined by IPSO Alliance. For example, **lightCtrl (3311)** is a light controller Smart Object, its ID is `'lightCtrl'` in string and `3311` in number.  
 * **Char. UUID**: BIPSO-defined Characteristic UUID corresponding to an IPSO Object.  
