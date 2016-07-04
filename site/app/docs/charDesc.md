@@ -2,7 +2,7 @@
 
 In BIPSO, an IPSO Smart Object will be mapped to a BLE **Characteristic** with a well-defined *Characteristic Value*. The *Characteristic Value* is a piece of data containing IPSO Resources on a Smart Object.  
   
-BIPSO uses Characteristic UUIDs range from 0xcc00 to 0xcccc to do the mapping. BIPSO has mapped 51 Smart Objects at this moment, and UUIDs 0xcc33 to 0xcccc is reserved for future use. The following table are cross-references between a IPSO Smart Object and its BIPSO-defined Characteristic, each column in this table is:  
+BIPSO uses Characteristic UUIDs range from 0xcc00 to 0xcccc to do the mapping. BIPSO has mapped 51 Smart Objects at this moment, and UUIDs 0xcc33 to 0xcccc is reserved for future use. The following table is a cross-reference between a IPSO Smart Object and its BIPSO-defined Characteristic, each column in this table is:  
 
 * **Object ID**: IPSO Object identifier defined by IPSO Alliance. For example, **lightCtrl** is a light controller Smart Object, its ID is `'lightCtrl'` in string.  
 * **Char. UUID**: BIPSO-defined Characteristic UUID corresponding to an IPSO Object.  
