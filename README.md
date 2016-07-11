@@ -160,7 +160,7 @@ bipso.spec('dIn');      // (2) from an oid
 //     fields: {
 //          mandatory: [
 //              { name: 'flags',          type: 'uint8'   },
-//				{ name: 'id',          type: 'uint8'   },
+//				      { name: 'id',             type: 'uint8'   },
 //              { name: 'dInState',       type: 'boolean' }
 //          ],
 //          optional: [
