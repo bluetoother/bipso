@@ -1,9 +1,8 @@
 'use strict';
 
-var /*fs = require('fs'),
-    */Enum = require('enum'),
-    // _defs = JSON.parse(fs.readFileSync(__dirname + '/defs/defs.json', { encoding: 'utf8' })),
+var Enum = require('enum'),
     _defs = require('./defs/defs.js'),
+    BipsoObject = require('./bipsoObject'),
     DEFS = {
         ipsoCharUuid: null
     };
@@ -89,7 +88,18 @@ DEFS.spec = function (id) {
         defs.fields.optional.push({name: name, type: item[name]});
     });
 
-    return defs;
+    if (!defs.oid)
+        return;
+    else
+        return defs;
+};
+
+DEFS.frame = function (uuid, valObj) {
+    return (new BipsoObject(uuid)).frame(valObj);
+};
+
+DEFS.parse = function (uuid, buf, callback) {
+    return (new BipsoObject(uuid)).parse(buf, callback);
 };
 
 module.exports = DEFS;

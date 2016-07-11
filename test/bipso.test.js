@@ -1,4 +1,5 @@
-var Enum = require('enum'),
+var _ = require('busyman'),
+    Enum = require('enum'),
     expect = require('chai').expect,
     // fs = require('fs'),
     bipso = require('../index'),
@@ -120,4 +121,36 @@ describe('Getter Check', function () {
             expect(bipso.spec(key)).to.be.deep.equal(bipsoDefs[key]);
         });
     });
+});
+
+describe('#.frame & #.parse', function () {
+    var valObjs = [
+            { uuid: '0xcc00', value: {"flags":0,"id": 0,"dInState":false} },
+            { uuid: '0xcc02', value: {"flags":64,"id": 0,"aInCurrValue":0,"sensorType":"Voltage mV"} },
+            { uuid: '0xcc0a', value: {"flags":8,"id": 0,"onOff":false,"appType":"VoltageMeas"} },
+            { uuid: '0xcc11', value: {"flags":1,"id": 0,"sensorValue":0,"units":"hPa"} },
+            { uuid: '0xcc04', value: {"flags":129,"id": 0,"sensorValue":0,"units":"ppm","sensorType":"MQ7"} },
+            { uuid: '0xcc0a', value: {"flags":8,"id": 0,"onOff":false,"appType":"WeatherStation"} },
+            { uuid: '0xcc1a', value: {"flags":1,"id": 0,"sensorValue":0,"units":"dB-SPL"} },
+            { uuid: '0xcc24', value: {"flags":7,"id": 0,"xValue":0,"yValue":0,"zValue":0,"units":"dps"} },
+            { uuid: '0xcc32', value: {"flags":1,"id": 0,"mStateIn":8,"appType":"Remote"} },
+            { uuid: '0xcc05', value: {"flags":1,"id": 0,"sensorValue":109,"units":"lux"} },
+            { uuid: '0xcc07', value: {"flags":1,"id": 0,"sensorValue":25.41571044921875,"units":"C"} }
+        ];
+
+    valObjs.forEach(function (valObj) {
+        it(valObj.uuid, function (done) {
+            var buf = bipso.frame(valObj.uuid, valObj.value);
+            bipso.parse(valObj.uuid, buf, function (err, result) {
+                if (err) 
+                    console.log(err);
+                else if (_.isEqual(valObj.value, result)) 
+                    done();
+            });
+        });
+    });
+});
+
+describe('', function () {
+    
 });

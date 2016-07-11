@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/bluetoother/bipso#readme",
   "dependencies": {
+    "concentrate": "^0.2.3",
+    "dissolve-chunks": "^1.0.8",
     "enum": "^2.3.0"
   },
   "devDependencies": {
+    "busyman": "^0.1.1",
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
   }
