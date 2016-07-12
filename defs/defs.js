@@ -108,8 +108,8 @@ module.exports = {
     "0xcc00": {  
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"dInState": "boolean"}
             ],
             "optional": [
@@ -126,8 +126,8 @@ module.exports = {
     "0xcc01": { 
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"dOutState": "boolean"}
             ],
             "optional": [
@@ -139,8 +139,8 @@ module.exports = {
     "0xcc02": {  
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"aInCurrValue": "float"}
             ],
             "optional": [
@@ -157,8 +157,8 @@ module.exports = {
     "0xcc03": {  
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"aOutCurrValue": "float"} 
             ],
             "optional": [
@@ -171,8 +171,8 @@ module.exports = {
     "0xcc04": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -190,8 +190,8 @@ module.exports = {
     "0xcc05": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -207,8 +207,8 @@ module.exports = {
     "0xcc06": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"dInState": "boolean"}
             ],
             "optional": [
@@ -223,8 +223,8 @@ module.exports = {
     "0xcc07": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -240,8 +240,8 @@ module.exports = {
     "0xcc08": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -284,8 +284,8 @@ module.exports = {
     "0xcc0a": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"onOff": "boolean"}
             ],
             "optional": [
@@ -299,8 +299,8 @@ module.exports = {
     "0xcc0b": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"setPointValue": "float"}
             ],
             "optional": [
@@ -313,8 +313,8 @@ module.exports = {
     "0xcc0c": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"eventId": "string"}, 
                 {"startTime": "uint32"}, 
                 {"durationInMin": "uint16"}
@@ -329,8 +329,8 @@ module.exports = {
     "0xcc0d": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"onOff": "boolean"}
             ],
             "optional": [
@@ -346,8 +346,8 @@ module.exports = {
     "0xcc0e": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"onOff": "boolean"}
             ],
             "optional": [
@@ -361,8 +361,8 @@ module.exports = {
     "0xcc0f": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"xValue": "float"}
             ],
             "optional": [
@@ -377,8 +377,8 @@ module.exports = {
     "0xcc10": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"xValue": "float"}
             ],
             "optional": [
@@ -392,8 +392,8 @@ module.exports = {
     "0xcc11": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -409,8 +409,8 @@ module.exports = {
     "0xcc12": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -428,8 +428,8 @@ module.exports = {
     "0xcc13": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -447,8 +447,8 @@ module.exports = {
     "0xcc14": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -466,8 +466,8 @@ module.exports = {
     "0xcc15": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -485,8 +485,8 @@ module.exports = {
     "0xcc16": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -504,8 +504,8 @@ module.exports = {
     "0xcc17": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -523,8 +523,8 @@ module.exports = {
     "0xcc18": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -542,8 +542,8 @@ module.exports = {
     "0xcc19": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -561,8 +561,8 @@ module.exports = {
     "0xcc1a": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -580,8 +580,8 @@ module.exports = {
     "0xcc1b": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -599,8 +599,8 @@ module.exports = {
     "0xcc1c": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -618,8 +618,8 @@ module.exports = {
     "0xcc1d": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -637,8 +637,8 @@ module.exports = {
     "0xcc1e": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -656,8 +656,8 @@ module.exports = {
     "0xcc1f": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -675,8 +675,8 @@ module.exports = {
     "0xcc20": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -694,8 +694,8 @@ module.exports = {
     "0xcc21": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -708,8 +708,8 @@ module.exports = {
     "0xcc22": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"compassDir": "float"}
             ],
             "optional": [
@@ -723,8 +723,8 @@ module.exports = {
     "0xcc23": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"currentTime": "uint32"}
             ],
             "optional": [
@@ -736,8 +736,8 @@ module.exports = {
     "0xcc24": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"xValue": "float"}
             ],
             "optional": [
@@ -760,8 +760,8 @@ module.exports = {
     "0xcc25": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"colour": "string"}
             ],
             "optional": [
@@ -773,8 +773,8 @@ module.exports = {
     "0xcc26": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"latitude": "string"},
                 {"longitude": "string"}
             ],
@@ -791,8 +791,8 @@ module.exports = {
     "0xcc27": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"currentPos": "float"}
             ],
             "optional": [
@@ -810,8 +810,8 @@ module.exports = {
     "0xcc28": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"onOff": "boolean"},
                 {"minOffTime": "float"}
             ],
@@ -825,8 +825,8 @@ module.exports = {
     "0xcc29": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"clip": "buffer"}
             ],
             "optional": [
@@ -840,8 +840,8 @@ module.exports = {
     "0xcc2a": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"timeDuration": "float"}
             ],
             "optional": [
@@ -861,8 +861,8 @@ module.exports = {
     "0xcc2b": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"text": "string"}
             ],
             "optional": [
@@ -880,8 +880,8 @@ module.exports = {
     "0xcc2c": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"dInState": "boolean"}
             ],
             "optional": [
@@ -908,8 +908,8 @@ module.exports = {
     "0xcc2e": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"incInputState": "boolean"},
                 {"decInputState": "boolean"}
             ],
@@ -938,8 +938,8 @@ module.exports = {
     "0xcc30": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"sensorValue": "float"}
             ],
             "optional": [
@@ -957,8 +957,8 @@ module.exports = {
     "0xcc31": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"dInState": "boolean"}
             ],
             "optional": [
@@ -970,8 +970,8 @@ module.exports = {
     "0xcc32": {
         "params": {
             "mandatory": [
-                {"flags": "uint8"},
                 {"id": "uint8"},
+                {"flags": "uint8"},
                 {"mStateIn": "uint8"}
             ],
             "optional": [
