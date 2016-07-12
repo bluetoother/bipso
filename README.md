@@ -39,10 +39,12 @@ Please see [BIPSO Specification](https://github.com/bluetoother/bipso/blob/maste
 <a name="Usage"></a>
 ## 3. Usage  
 
-**bipso** provides you with only three APIs:  
+**bipso** provides you with only five APIs:  
 * `.ou()`: Get the BIPSO-defined Characteristic UUID by an Smart Object ID (oid).  
 * `.uo()`: Get the oid by an BIPSO-defined Characteristic UUID.  
-* `.spec()`: Get the definition of an BIPSO-defined Characteristic. The returned definition is a data object to show you what possible fields should be in the BIPSO-defined **Characteristic Value**.  
+* `.spec()`: Get the definition of an BIPSO-defined Characteristic. The returned definition is a data object to show you what possible fields should be in the BIPSO-defined **Characteristic Value**. 
+* `.frame()`: Generate the raw packet of a BIPSO-defined Characteristic Value.
+* `.parse()`: Parse a raw buffer into a BIPSO-defined Characteristic Value.
 
 ```js
 var bipso = require('bipso');
@@ -55,6 +57,11 @@ bipso.uo('0xcc00');
 // Get the definition of a BIPSO-defined Characteristic:
 bipso.spec('0xcc00');   // (1) from a BIPSO-defined UUID
 bipso.spec('dIn');      // (2) from an oid
+
+// Build a buffer of BIPSO-defined Characteristic:
+bipso.frame('0xcc00', { "flags": 0, "id": 1, "dInState": false });
+// Parse a buffer into BIPSO-defined Characteristic:
+bipso.parse('0xcc00', new Buffer([0x00, 0x01, 0x00]), function (err, result) {...});
 ```
 <br />
 
@@ -64,6 +71,8 @@ bipso.spec('dIn');      // (2) from an oid
 * [.ou()](#ou)  
 * [.uo()](#uo)  
 * [.spec()](#spec)  
+* [.frame()](#frame)
+* [.parse()](#parse)
 
 *************************************************
 <a name="ou"></a>
@@ -175,6 +184,76 @@ bipso.spec('dIn');      // (2) from an oid
 //     }
 // }
 ```
+
+*************************************************
+<a name="frame"></a>
+### .frame(uuid, charVal)
+
+Generate the raw packet of a BIPSO-defined Characteristic Value.
+
+**Arguments:**  
+
+* `uuid`(_String_ | _Number_): Characteristic UUID defined in [BIPSO Specification](https://github.com/bluetoother/bipso/blob/master/doc/spec.md).
+* `charVal`(_Object_): A BIPSO-defined Characteristic Value.
+
+**Returns:**  
+
+* (_Buffer_): Raw buffer of given Characteristic Value.
+
+**Example:**  
+
+```js
+var genericUuid = '0xcc04',
+	genericSensorValue = {			
+		flags: 129,
+		id: 0,
+		sensorValue: 0,
+		units: ppm,
+		sensorType: MQ7
+	};
+
+bipso.frame(genericUuid, genericSensorValue);	// <Buffer 81 00 00 00 00 00 03 70 70 6d 03 4d 51 37>
+```
+
+*************************************************
+<a name="parse"></a>
+### .parse(uuid, buf, callback)
+
+Parse a raw buffer into a BIPSO-defined Characteristic Value.
+
+**Arguments:**  
+
+* `uuid`(_String_ | _Number_): Characteristic UUID defined in [BIPSO Specification](https://github.com/bluetoother/bipso/blob/master/doc/spec.md).
+* `buf`(_Buffer_): Raw buffer to be parsed.
+* `callback`(_Function_): `function (err, result) {...}`. Get called when the buffer is parsed.
+
+**Returns:**  
+
+* (_None_)   
+
+**Example:**  
+
+```js
+var genericUuid = '0xcc04',
+	rawBuf = new Buffer([81, 00, 00, 00, 00, 00, 03, 70, 70, 6d, 03, 4d, 51, 37]);
+
+bipso.parse(genericUuid, rawBuf, function (err, result) {
+	if (err)
+		console.log(err);
+	else
+		console.log(result);
+
+	// Result object 
+	// 	{
+	// 		flags: 129,
+	// 		id: 0,
+	// 		sensorValue: 0,
+	// 		units: ppm,
+	// 		sensorType: MQ7
+	// 	}
+});
+```
+
 <br />
 
 <a name="Types"></a>

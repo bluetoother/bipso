@@ -42,6 +42,9 @@ BipsoObject.prototype.frame = function (valObj) {
         index = 1,
         dataBuf = Concentrate();
 
+    if (typeof window === 'object')
+        throw new Error('The method is disabled in the client-side.');
+
     this.args.mandatory.forEach(function (arg) {
         arg.value = valObj[arg.name];
         args.push(arg);
@@ -87,6 +90,9 @@ BipsoObject.prototype.parse = function (buf, callback) {
     var chunkRules = [],
         parser,
         err;
+
+    if (typeof window === 'object')
+        throw new Error('The method is disabled in the client-side.');
 
     this.args.mandatory.forEach(function (arg) {
         var rule = ru[arg.type];
