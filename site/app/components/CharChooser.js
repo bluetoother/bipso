@@ -14,14 +14,6 @@ var bipsoUuid = require('../misc/bipso_uuid');
 var resourceDesc = require('../misc/desc');
 var oidDefs = bipsoUuid.oid;
 
-function handleRequestDelete() {
-  alert('You clicked the delete button.');
-}
-
-function handleTouchTap() {
-  alert('You clicked the Chip.');
-}
-
 var oids = [],
     totalLen = 0;
 for (var i in oidDefs) {
@@ -90,6 +82,7 @@ function getSampleCode (oid, rids) {
             fieldName = fieldName + '[7]';
 
         fieldVal = getTypeVal(rid.type, ridInfo[rid.name]);
+        if (rid.name === 'id') fieldVal = 0;
 
         if (rid.name === 'flags') {
             str = (flagsVal > 15) ? '': '0';
@@ -195,7 +188,6 @@ var CharChooser = React.createClass({
         };
     },
     handleObjectSelected: function (oid) {
-        console.log('OID: ' + oid);
         this.setState({
             uuid: bipso.ou(oid),
             tableData: getTableData(oid),
@@ -203,8 +195,6 @@ var CharChooser = React.createClass({
         });
     },
     handleResourceSelected: function (rids) {
-        console.log('Resources: ');
-        console.log(rids);
         var oid = bipso.uo(this.state.uuid);
         this.setState({
             tableData: getTableData(oid, rids),

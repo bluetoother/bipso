@@ -9,16 +9,11 @@ import MenuItem from 'material-ui/MenuItem';
 
 var DropDownMenuLongMenu = React.createClass({
     getInitialState: function () {
-        console.log(this.props.items);
-
         return {
             value: this.props.items[0].name
         };
     },
     handleChange: function (event, index, value) {
-        console.log('VALUE');
-        console.log(value);
-
         this.setState({value});
         if (this.props.onChanged)
             this.props.onChanged(value);

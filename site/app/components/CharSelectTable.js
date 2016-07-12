@@ -24,7 +24,6 @@ var CharSelectTable = React.createClass({
         };
     },
     handleRowSelection: function (cells) {
-        console.log(cells);
         var selectedRids = [];
 
         cells.forEach(function (cellIndex) {

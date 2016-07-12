@@ -1,4 +1,5 @@
-module.exports = { 
+module.exports = {
+  id: 'The Object Instance Id to help you distinguish between different instances.', 
   flags: 'It is a bit-vector to tell which optional fields does a Characteristic Value have',
   dInPolarity: 'The polarity of the digital input as a Boolean (0 = Normal, 1= Reversed)',
   debouncePeriod: 'The debounce period in ms',

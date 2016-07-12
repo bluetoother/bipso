@@ -7,7 +7,6 @@ import IconButton from 'material-ui/IconButton';
 import FlatButton from 'material-ui/FlatButton';
 import typography from 'material-ui/styles/typography';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 var background = 'linear-gradient(to left, #006064 , #0082FB)';
 
@@ -100,41 +99,39 @@ var Banner = React.createClass({
                     iconElementRight={<IconButton iconClassName="muidocs-icon-custom-github" href="https://github.com/callemall/material-ui"/>}
                     style={styles.navbar}
                 />
-                <ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={500}>
-                    <InnerBanner style={styles.root}>
-                        <div style={styles.tagline}>
-                            <h1 style={styles.h1}>BIPSO</h1>
-                            <h2 style={styles.h2}>
-                                Define your BLE Characteristics in an IPSO way.
-                            </h2>
-                            <RaisedButton
-                                className="demo-button"
-                                label="Characteristics"
-                                backgroundColor='rgba(255, 255, 255, 0)'
-                                containerElement={<Link to="/characteristic" />}
-                                style={styles.demoStyle}
-                                labelStyle={styles.label}
-                            />
-                            <RaisedButton
-                                className="demo-button"
-                                label="Dev Tool"
-                                backgroundColor='rgba(255, 255, 255, 0)'
-                                containerElement={<Link to="/devtool" />}
-                                style={styles.demoStyle}
-                                labelStyle={styles.label}
-                            />
-                            <RaisedButton
-                                className="demo-button"
-                                label="View on Github"
-                                backgroundColor='rgba(255, 255, 255, 0)'
-                                linkButton={true}
-                                href='https://github.com/bluetoother/bipso'
-                                style={styles.demoStyle}
-                                labelStyle={styles.label}
-                            />
-                        </div>
-                    </InnerBanner>
-                </ReactCSSTransitionGroup>
+                <InnerBanner style={styles.root}>
+                    <div style={styles.tagline}>
+                        <h1 style={styles.h1}>BIPSO</h1>
+                        <h2 style={styles.h2}>
+                            Define your BLE Characteristics in an IPSO way.
+                        </h2>
+                        <RaisedButton
+                            className="demo-button"
+                            label="Characteristics"
+                            backgroundColor='rgba(255, 255, 255, 0)'
+                            containerElement={<Link to="/characteristic" />}
+                            style={styles.demoStyle}
+                            labelStyle={styles.label}
+                        />
+                        <RaisedButton
+                            className="demo-button"
+                            label="Dev Tool"
+                            backgroundColor='rgba(255, 255, 255, 0)'
+                            containerElement={<Link to="/devtool" />}
+                            style={styles.demoStyle}
+                            labelStyle={styles.label}
+                        />
+                        <RaisedButton
+                            className="demo-button"
+                            label="View on Github"
+                            backgroundColor='rgba(255, 255, 255, 0)'
+                            linkButton={true}
+                            href='https://github.com/bluetoother/bipso'
+                            style={styles.demoStyle}
+                            labelStyle={styles.label}
+                        />
+                    </div>
+                </InnerBanner>
             </div>
         );
     }
