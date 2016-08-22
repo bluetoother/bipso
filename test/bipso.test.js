@@ -3,7 +3,7 @@ var _ = require('busyman'),
     expect = require('chai').expect,
     // fs = require('fs'),
     bipso = require('../index'),
-    BIPSODEF = require('../defs/defs.js');
+    BIPSODEF = require('../lib/defs/defs.js');
 
 var DEFS = {};
 DEFS.oid = new Enum(BIPSODEF.oid);

@@ -1,12 +1,11 @@
-bipso
-========================
+# bipso
 An utility to help BLE developers define Characteristics in an IPSO way.  
 
 <br />
 
 [![NPM](https://nodei.co/npm/bipso.png?downloads=true)](https://nodei.co/npm/bipso/)  
 
-[![Travis branch](https://img.shields.io/travis/bluetoother/bipso/master.svg?maxAge=2592000)](https://travis-ci.org/bluetoother/bipso)
+[![Travis branch](https://travis-ci.org/bluetoother/bipso.svg?branch=master)](https://travis-ci.org/bluetoother/bipso)
 [![npm](https://img.shields.io/npm/v/bipso.svg?maxAge=2592000)](https://www.npmjs.com/package/bipso)
 [![npm](https://img.shields.io/npm/l/bipso.svg?maxAge=2592000)](https://www.npmjs.com/package/bipso)
 
@@ -168,8 +167,8 @@ bipso.spec('dIn');      // (2) from an oid
 //     uuid: '0xcc00',
 //     fields: {
 //          mandatory: [
+//              { name: 'id',             type: 'uint8'   },
 //              { name: 'flags',          type: 'uint8'   },
-//				{ name: 'id',             type: 'uint8'   },
 //              { name: 'dInState',       type: 'boolean' }
 //          ],
 //          optional: [
@@ -204,15 +203,15 @@ Generate the raw packet of a BIPSO-defined Characteristic Value.
 
 ```js
 var genericUuid = '0xcc04',
-	genericSensorValue = {			
-		flags: 129,
-		id: 0,
-		sensorValue: 0,
-		units: ppm,
-		sensorType: MQ7
-	};
+    genericSensorValue = {            
+        flags: 129,
+        id: 0,
+        sensorValue: 0,
+        units: ppm,
+        sensorType: MQ7
+    };
 
-bipso.frame(genericUuid, genericSensorValue);	// <Buffer 81 00 00 00 00 00 03 70 70 6d 03 4d 51 37>
+bipso.frame(genericUuid, genericSensorValue);    // <Buffer 81 00 00 00 00 00 03 70 70 6d 03 4d 51 37>
 ```
 
 *************************************************
@@ -235,22 +234,22 @@ Parse a raw buffer into a BIPSO-defined Characteristic Value.
 
 ```js
 var genericUuid = '0xcc04',
-	rawBuf = new Buffer([81, 00, 00, 00, 00, 00, 03, 70, 70, 6d, 03, 4d, 51, 37]);
+    rawBuf = new Buffer([00, 81, 00, 00, 00, 00, 03, 70, 70, 6d, 03, 4d, 51, 37]);
 
 bipso.parse(genericUuid, rawBuf, function (err, result) {
-	if (err)
-		console.log(err);
-	else
-		console.log(result);
+    if (err)
+        console.log(err);
+    else
+        console.log(result);
 
-	// Result object 
-	// 	{
-	// 		flags: 129,
-	// 		id: 0,
-	// 		sensorValue: 0,
-	// 		units: ppm,
-	// 		sensorType: MQ7
-	// 	}
+    // Result object 
+    //     {
+    //         id: 0,
+    //         flags: 129,
+    //         sensorValue: 0,
+    //         units: ppm,
+    //         sensorType: MQ7
+    //     }
 });
 ```
 
