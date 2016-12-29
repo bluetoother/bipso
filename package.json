@@ -1,6 +1,6 @@
 {
   "name": "bipso",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "An utility to help BLE developers define Characteristics in an IPSO way.",
   "main": "index.js",
   "scripts": {
