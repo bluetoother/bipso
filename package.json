@@ -22,7 +22,7 @@
     "enum": "^2.3.0"
   },
   "devDependencies": {
-    "busyman": "^0.2.1",
+    "busyman": "^0.3.0",
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
   }
